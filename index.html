@@ -1,7 +1,150 @@
-<html>
-    <body>
-        <h1>Test of "h1" or Heading1</h1>
-        <h2>Test of "h2" or Heading2</h2>
-        <p> Test of "p" or paragraph</p>
+<!--     
+The entirety of this website is powered by this Hamster
+
+                                      ███████████████████████ █                                     
+                  █               █████████████████████████████████                                 
+                █             ██████████                     █████████                              
+              ██           ████████                              ████████                           
+            ██     █     ███████                                     ███████                        
+           ██    █    ███████                                          ██████                       
+          █    ██    █████                                                █████                     
+        █     ██   █████                                                    █████                   
+       █     █    █████                                                       ████                  
+       █    █    ████                                                          █████                
+           █    ████                                                            █████               
+          █   █████                                                              █████              
+         █   █████                                                                █████             
+        █    ████                                                                  ████             
+   █    █   ████                                                                    ████            
+  ██   ██   ████                                                                     ████           
+  █    █   ████                                                                      ████           
+  █    █   ████                                                                       ███    █      
+      ██  ████                                              ████████                  ████   █      
+ ██   █   ████                                             ██      ██                 ████   █      
+ █    █   ████                                            ██    █  ██                ████   █      
+ █    █   ████                                            ██   ███   █                 ███   █    █ 
+ █    █   ████                                            ██  ████  ██                ████   █    █ 
+ █    █   ████                     ███████ ███████        ██   ███   ████████         ████   █    █ 
+ █    █   ████                   ██      █   █     ████    █   ████  █      ███       ████   █    █ 
+  █   ██   ████                ██       ██  █           █  ██  ███  ██   ███  ███     ████  ██    █ 
+  █    █   ████              ██     ███     █           ██  ████         ███    ███  ████   █    ██ 
+  █    █   ████            ███    ██   █   █            █    █                  █████████   █    █  
+        █   ████        █████ █  ██  ██  ███           ██     █                 ████ ███   ██   █   
+        █    ████     ██   █  █ ██  █                 █        █       ██       ██  ████   █    █   
+             █████   █ █  ██   █   █               ██         █         ███   ███ █████   █    █    
+              █████  █ █████       █             ███████      █             ███   ████    █         
+               █████    █ ██       █                    █      █████      ███   █████   ██          
+                █████      █        ██████              █            █  ███     ████   ██           
+                 █████     ██  ██                      ██    █      █████     █████    █            
+                  ██████     ███         █             █     ██   ████      ██████   █              
+                   ███████    █      ████             ██      ████        ██████    █               
+                 ███████████  █    ██████            █ ███      ███     ██████    ██                
+                █████   ████████ ██      ████████████    ███      ██  ██████     █     ██           
+               ████       ████████                          ██████████████     █     ██             
+              ████           █████████                        ██████████           ██               
+             ████                ████████████          █████████████              ██                
+            ████                     ██████████████████████████                ██                   
+            ███                           █ ████████████                     ██                     
+           ████                                                           ██                        
+           ████                                                       ████                          
+           ████                                                     ██                              
+           ████                                                                                     
+           ████                                                                                     
+           █████████████████████████████████████████████████████████████████████████████            
+           ██████████████████████████████████████████████████████████████████████████████                                                                                                                                                                                                        
+
+
+https://www.freecodecamp.org/news/how-to-make-a-custom-mouse-cursor-with-css-and-javascript/
+-->
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <!-- Setting the Title and Icon -->
+        <title>James K Portfolio</title>
+        <link rel="icon" type="image/x-icon" href="Image Link">
+
+        <!-- Setting information on how a page should be displayed based on the device -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            body {
+                margin: 2px;
+                padding: 2px;
+            }
+
+            header {
+                margin: 0;
+                padding: 0;
+            }
+
+            #topMenu {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #333333;
+
+                display: flex;
+                justify-content: center;
+                
+            }
+
+            #topMenuOption {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 16px;
+                text-decoration: none;
+
+                border: 5px solid red;
+            }
+
+
+            #CursorTorch {
+                margin: -5px;
+                padding: -5px;
+
+                position: fixed;
+                width: 4096px;
+                height: 4096px;
+                object-position: 0px 0px;
+                opacity: 100;
+            }
+        </style>
+
+        <!-- The position being fixed means its sepearte from normal dcoument scrolling and flow -->
+        <script>
+            function mainTorchMovement(e) {
+                const torch = document.getElementById("CursorTorch");
+
+                torch.style.top = event.clientY - 2048 + 'px';
+                torch.style.left = event.clientX - 2048 + 'px';
+            }
+
+            document.addEventListener('mousemove', mainTorchMovement(event));
+        </script>
+
+    </head>
+
+    <!-- Setting up a Listener to move the torch as every mouse movement -->
+    <body onmousemove="mainTorchMovement(event)">
+        <!-- Old Image used to make whole page have elements to allow constant tracking of the light -->
+        <!-- <img src="images/TestTorch.png" alt="noAlt.png" height="50%" width="50%" /> -->
+
+        <img id="CursorTorch" src="images/TempLighting.png" alt="noAlt.png"/>
+
+        <header>
+            <menu id="topMenu">
+                <!-- Can link to different pages with href="Page.html"-->
+                <li><a id="topMenuOption" href="index.html">About</a></li>
+                <li><a id="topMenuOption" href="GraphicsPrograming.html">Graphics Programing</a></li>
+                <li><a id="topMenuOption" href="Blender.html">Blender</a></li>
+                <li><a id="topMenuOption" href="FilmsAndVideos.html">Films and Videos</a></li>
+            </menu>
+        </header>
+        
     </body>
 </html>
