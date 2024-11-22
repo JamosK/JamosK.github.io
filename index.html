@@ -52,256 +52,86 @@ The entirety of this website is powered by this Hamster
            ████                                                                                     
            █████████████████████████████████████████████████████████████████████████████            
            ██████████████████████████████████████████████████████████████████████████████                                                                                                                                                                                                        
-
-
-https://www.freecodecamp.org/news/how-to-make-a-custom-mouse-cursor-with-css-and-javascript/
 -->
 
-
+<!-- html setup -->
 <!DOCTYPE html>
+<!-- Setting up a Listener to move the torch as every mouse movement -->
+<html lang="en" onmousemove="mainTorchMovement(event)">
 
-<html lang="en">
+
+
+    <!-- ============================================================================================== -->
+    <!-- =========================================== Header =========================================== -->
+    <!-- ============================================================================================== -->
     <head>
         <!-- Setting the Title and Icon -->
         <title>James K Portfolio</title>
-        <link rel="icon" type="image/x-icon" href="Image Link">
+        <link rel="icon" type="image/x-icon" href="images/favicon.png">
 
         <!-- Setting information on how a page should be displayed based on the device -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <style>
+        <!-- ============================================= CSS ============================================= -->
+        <!-- Importing the main CSS file -->
+        <link rel="stylesheet" href="CSSmain.css">
 
-            /*
-            Off White: #E0F2CE rgb(153, 170, 187)
-            Minor Orange: #E8F097
-            Light Orange : #F5D040
-            Orangeish: #F0DD00
-            Orange : #F0A200
-            */
-
-            /* CSS Color Varibles */
-            :root {
-                --Orange1:rgb(245, 227, 194);
-                --Orange2:rgb(232, 240, 151);
-                --Orange3:rgb(202, 170, 39);
-                --Orange4:rgb(185, 170, 0);
-                --Orange5:rgb(143, 95, 0);
-            }
-
-            /* 
-            =======================================================================================================
-            ===================================== Built in HTML Value Changes =====================================
-            =======================================================================================================
-            */
-
-            body {
-                margin: 2px;
-                padding: 2px;
-                z-index: 100;
-
-                background-color: var(--Orange1);
-            }
-
-            div {
-                font-family: fantasy;
-                color: var(--Orange5);
-            }
-
-            a {
-                font-family: fantasy;
-                color: var(--Orange5);
-            }
-
-            li {
-                font-family: fantasy;
-                color: var(--Orange5);
-            }
-
-            form {
-                font-family: fantasy;
-                color: var(--Orange5);
-            }
-
-            label {
-                font-family: fantasy;
-                color: var(--Orange5);
-            }
-
-            input {
-                font-family: fantasy;
-                color: var(--Orange5);
-            }
-
-            option {
-                font-family: fantasy;
-                color: var(--Orange5);
-            }
-
-            header {
-                /* Margin is the space around the section */
-                margin: 0;
-                /* Padding is the space between the border of the section and the objects inside */
-                padding: 0;
-            }
-
-            /* 
-            =======================================================================================================
-            ============================================= Custom Tags =============================================
-            =======================================================================================================
-            */
-
-            #topMenu {
-                list-style-type: none;
-                margin: 0;
-                padding: 0;
-                overflow: hidden;
-                background-color: var(--Orange3);
-
-                display: flex;
-                justify-content: center;
-            }
-
-            .topMenuOption {
-                display: block;
-                color: var(--Orange1);
-                text-align: center;
-                padding: 16px;
-                text-decoration: none;
-                color: var(--Orange5);
-
-                border: 5px solid var(--Orange5);
-            }
-
-            #CursorTorch {
-                margin: -5px;
-                padding: -5px;
-
-                position: fixed;
-                width: 4096px;
-                height: 4096px;
-                object-position: 0px 0px;
-                opacity: 0;
-
-                z-index: 101;
-                pointer-events: none;
-                filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/TempLighting.png', sizingMethod='scale');
-                background: none !important;
-                
-            }
-
-            #section1 {
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-            }
-
-        </style>
-
-        <!-- Script for the Spooky Theme -->
-        <!-- The position being fixed means its sepearte from normal dcoument scrolling and flow -->
-        <script>
-            function mainTorchMovement(e) {
-                const torch = document.getElementById("CursorTorch");
-
-                torch.style.top = event.clientY - 2048 + 'px';
-                torch.style.left = event.clientX - 2048 + 'px';
-            }
-
-            document.addEventListener('mousemove', mainTorchMovement(event));
-        </script>
-
-        <!-- Script For Changing Themes -->
-        <script>
-            function rgb(r, g, b){
-                return "rgb("+r+","+g+","+b+")";
-            }
-
-            function changeTheme() {
-                var themeValue = document.getElementById("themeForm").value;
-
-                if (themeValue == "Light") {
-                    document.documentElement.style.setProperty("--Orange1", "rgb(245, 227, 194)");
-                    document.documentElement.style.setProperty("--Orange2", "rgb(232, 240, 151)");
-                    document.documentElement.style.setProperty("--Orange3", "rgb(202, 170, 39)");
-                    document.documentElement.style.setProperty("--Orange4", "rgb(185, 170, 0)");
-                    document.documentElement.style.setProperty("--Orange5", "rgb(143, 95, 0)");
-
-                    document.getElementById("CursorTorch").style.opacity = 0;
-
-                } else if (themeValue == "Dark") {
-                    document.documentElement.style.setProperty("--Orange1", "rgb(100,100,100)");
-                    document.documentElement.style.setProperty("--Orange2", "rgb(100,100,100)");
-                    document.documentElement.style.setProperty("--Orange3", "rgb(100,100,100)");
-                    document.documentElement.style.setProperty("--Orange4", "rgb(100,100,100)");
-                    document.documentElement.style.setProperty("--Orange5", "rgb(100,100,100)");
-
-                    document.getElementById("CursorTorch").style.opacity = 0;
-
-                } else if (themeValue == "Spooky") {
-                    document.documentElement.style.setProperty("--Orange1", "rgb(100,100,100)");
-                    document.documentElement.style.setProperty("--Orange2", "rgb(50,50,50)");
-                    document.documentElement.style.setProperty("--Orange3", "rgb(20,20,20)");
-                    document.documentElement.style.setProperty("--Orange4", "rgb(10,10,10)");
-                    document.documentElement.style.setProperty("--Orange5", "rgb(0,0,0)");
-
-                    document.getElementById("CursorTorch").style.opacity = 1;
-
-                } else if (themeValue == "Bubbles") {
-                    document.documentElement.style.setProperty("--Orange1", "rgb(100,100,100)");
-                    document.documentElement.style.setProperty("--Orange2", "rgb(100,100,100)");
-                    document.documentElement.style.setProperty("--Orange3", "rgb(100,100,100)");
-                    document.documentElement.style.setProperty("--Orange4", "rgb(100,100,100)");
-                    document.documentElement.style.setProperty("--Orange5", "rgb(100,100,100)");
-
-                    document.getElementById("CursorTorch").style.opacity = 0;
-
-                }
-                //--Orange1:rgb(245, 227, 194);
-                //--Orange2:#E8F097;
-                //--Orange3:#caaa27;
-                //--Orange4:#b9aa00;
-                //--Orange5:#8f5f00;
-            }
-        </script>
+        <!-- ============================================= Scripts ============================================= -->
+        <script src="JSmain.js"></script> 
 
     </head>
 
-    <!-- Setting up a Listener to move the torch as every mouse movement -->
-    <body onmousemove="mainTorchMovement(event)">
-        <!-- Old Image used to make whole page have elements to allow constant tracking of the light -->
-        <!-- <img src="images/TestTorch.png" alt="noAlt.png" height="50%" width="50%" /> -->
 
-        <!-- Spooky Theme Light -->
-        <img id="CursorTorch" src="images/TempLighting2.png" alt="noAlt.png"/>
 
-        <!-- Logo in Top Left -->
-        <nobr><li class="topMenuOption" style="position: absolute;">James K's Website</li></nobr>
-
-        <!-- Theme selection box -->
-        <nobr>
-            <form action="javascript:changeTheme()" class="topMenuOption" style="float: right; padding: 14px; background-color:var(--Orange3)">
-                <label>Theme</label>
-                <select id="themeForm">
-                  <option value="Light">Light</option>
-                  <option value="Dark">Dark</option>
-                  <option value="Spooky">Spooky</option>
-                  <option value="Bubbles">Bubbles</option>
-                </select>
-                <input type="submit" value="Submit"/>
-            </form>
-        </nobr>
+    <!-- ============================================================================================== -->
+    <!-- ========================================== HTMLBody ========================================== -->
+    <!-- ============================================================================================== -->
+    <body>
 
         <!-- Main Header of Website -->
         <header>
+            <!-- Sets up the follow items to exist in a flex box -->
             <menu id="topMenu">
+                <!-- Logo in Top Left -->
+                <li class="topMenuOption" style="flex-shrink: 100%;"><a class="topMenuOptionText" href="index.html">James K's Website</a></li>
+
                 <!-- Can link to different pages with href="Page.html"-->
-                <li><a class="topMenuOption" href="index.html">About</a></li>
-                <li><a class="topMenuOption" href="GraphicsPrograming.html">Graphics Programing</a></li>
-                <li><a class="topMenuOption" href="Blender.html">Blender</a></li>
-                <li><a class="topMenuOption" href="FilmsAndVideos.html">Films and Videos</a></li>
+                <li class="topMenuOption"><a class="topMenuOptionText" href="index.html">About</a></li>
+                <li class="topMenuOption"><a class="topMenuOptionText" href="GraphicsPrograming.html">Graphics Programing</a></li>
+                <li class="topMenuOption"><a class="topMenuOptionText" href="Blender.html">Blender</a></li>
+                <li class="topMenuOption"><a class="topMenuOptionText" href="FilmsAndVideos.html">Films and Videos</a></li>
+
+                <!-- Theme selection box -->
+                <form action="javascript:changeTheme()" class="topMenuOption" style="padding: 16px;">
+                    <label class="topMenuOptionText" style="padding: 0px;">Theme</label>
+                    <select id="themeForm">
+                        <option value="Light">Light</option>
+                        <option value="Dark">Dark</option>
+                        <option value="Spooky">Spooky</option>
+                        <option value="Bubbles">Bubbles</option>
+                    </select>
+                    <input type="submit" value="Submit"/>
+                </form>
             </menu>
         </header>
+
+        <!-- Spooky Theme Light -->
+        <img id="CursorTorch" src="images/TempLighting2.png" alt="noAlt.png"/>
         
+        <!-- Bubble Theme Bubbles -->
+        <img class="Bubbles" style="top: 10%; left: 10%;" src="images/Bubble.png" alt="noAlt.png"/>
+        <img class="Bubbles" style="top: 50%; left: 33%;" src="images/Bubble.png" alt="noAlt.png"/>
+        <img class="Bubbles" style="top: 45%; left: 67%;" src="images/Bubble.png" alt="noAlt.png"/>
+        <img class="Bubbles" style="top: 90%; left: 12%;" src="images/Bubble.png" alt="noAlt.png"/>
+        <img class="Bubbles" style="top: 20%; left: 70%;" src="images/Bubble.png" alt="noAlt.png"/>
+        <img class="Bubbles" style="top: 23%; left: 33%;" src="images/Bubble.png" alt="noAlt.png"/>
+        <img class="Bubbles" style="top: 45%; left: 97%;" src="images/Bubble.png" alt="noAlt.png"/>
+        <img class="Bubbles" style="top: 5%; left: 2%;" src="images/Bubble.png" alt="noAlt.png"/>
+        <img class="Bubbles" style="top: 33%; left: 22%;" src="images/Bubble.png" alt="noAlt.png"/>
+        <img class="Bubbles" style="top: 27%; left: 83%;" src="images/Bubble.png" alt="noAlt.png"/>
+
+
+
         <!--
         ==========================================================================================================
         ==========================================================================================================

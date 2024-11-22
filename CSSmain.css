@@ -1,0 +1,138 @@
+/* 
+===================================== Built in HTML Value Changes =====================================
+*/
+
+
+body {
+    margin: 2px;
+    padding: 2px;
+    z-index: 100;
+
+    background-color: var(--Color1);
+}
+
+div {
+    font-family: fantasy;
+    color: var(--Color5);
+}
+
+a {
+    font-family: fantasy;
+    color: var(--Color5);
+}
+
+li {
+    font-family: fantasy;
+    color: var(--Color5);
+}
+
+form {
+    font-family: fantasy;
+    color: var(--Color5);
+}
+
+input {
+    font-family: fantasy;
+    color: var(--Color5);
+}
+
+label {
+    font-family: fantasy;
+    color: var(--Color5);
+}
+
+input {
+    font-family: fantasy;
+    color: var(--Color5);
+}
+
+option {
+    font-family: fantasy;
+    color: var(--Color5);
+}
+
+header {
+    /* Margin is the space around the section */
+    margin: 0;
+    /* Padding is the space between the border of the section and the objects inside */
+    padding: 0;
+}
+
+
+/* 
+============================================= Custom Tags =============================================
+*/
+
+
+/* CSS Color Varibles */
+:root {
+    --Color1:rgb(245, 227, 194);
+    --Color2:rgb(232, 240, 151);
+    --Color3:rgb(202, 170, 39);
+    --Color4:rgb(185, 170, 0);
+    --Color5:rgb(143, 95, 0);
+}
+
+/* Values for the headers Flex options. There are different options for flex containers and flex items. */
+/* In flex align self is up/down, not left/right */
+#topMenu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--Color3);
+
+    display: flex;
+    /* How items are put together, starting left/center/right */
+    justify-content: center;
+    /* How items are aligned up/down */
+    align-items: stretch;
+
+    flex-wrap: wrap;
+}
+
+/* Customizes the header List options apperance, not flex layout */
+.topMenuOption {
+    /*padding: 16px;*/
+    border: 5px solid var(--Color5);
+
+    display: flex;
+    flex-shrink: 20%;
+}
+
+/* Customizes the text within the header List options */
+.topMenuOptionText {
+    padding: 16px;
+    text-align: center;
+    text-decoration: none;
+}
+
+#CursorTorch {
+    margin: -5px;
+    padding: -5px;
+
+    /* The position being fixed means its seperate from normal dcoument scrolling and flow */
+    position: fixed;
+    width: 4096px;
+    height: 4096px;
+    object-position: 0px 0px;
+    opacity: 0;
+
+    z-index: 101;
+    pointer-events: none;
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/TempLighting.png', sizingMethod='scale');
+    background: none !important;   
+}
+
+.Bubbles {
+    position: fixed;
+    width: 150px;
+    height: 150px;
+    opacity: 0;
+}
+
+#section1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
