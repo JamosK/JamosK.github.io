@@ -1,0 +1,692 @@
+<!-- html setup -->
+<!DOCTYPE html>
+<!-- Setting up a Listener to move the torch as every mouse movement -->
+<html lang="en" onmousemove="mainTorchMovement(event)">
+
+
+
+    <!-- ============================================================================================== -->
+    <!-- =========================================== Header =========================================== -->
+    <!-- ============================================================================================== -->
+    <head>
+        <!-- Setting the Title and Icon -->
+        <title>J.Kom Blender</title>
+        <link rel="icon" type="image/x-icon" href="images/favicon.png">
+
+        <!-- Setting information on how a page should be displayed based on the device -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- ============================================= CSS ============================================= -->
+        <!-- Importing the main CSS file -->
+        <link rel="stylesheet" href="mainCSS.css">
+
+        <!-- ============================================= Scripts ============================================= -->
+        <script src="mainJS.js"></script> 
+
+    </head>
+
+
+
+    <!-- ============================================================================================== -->
+    <!-- ========================================== HTMLBody ========================================== -->
+    <!-- ============================================================================================== -->
+    <body onload="setupWebsite();">
+
+        <!-- Main Header of Website -->
+        <header>
+            <!-- Sets up the follow items to exist in a flex box -->
+            <menu id="topMenu">
+                <!-- Logo in Top Left -->
+                <li class="topMenuOption" style="flex-shrink: 100%;"><a class="topMenuOptionText" href="index.html">James K's Website</a></li>
+
+                <!-- Can link to different pages with href="Page.html"-->
+                <li class="topMenuOption"><a class="topMenuOptionText" href="index.html">About</a></li>
+                <li class="topMenuOption"><a class="topMenuOptionText" href="graphicsPrograming.html">Graphics Programming</a></li>
+                <li class="topMenuOption"><a class="topMenuOptionText" href="blender.html">Blender</a></li>
+                <li class="topMenuOption"><a class="topMenuOptionText" href="filmsAndVideos.html">Films and Videos</a></li>
+
+                <!-- Theme selection box -->
+                <form action="javascript:changeTheme()" class="topMenuOption" style="padding: 16px;">
+                    <label class="topMenuOptionText" style="padding: 0px;">Theme</label>
+                    <select id="themeForm">
+                        <option value="Light">Light</option>
+                        <option value="Bubbles">Bubbles</option>
+                        <option value="Dark">Dark</option>
+                        <option value="Spooky">Spooky</option>
+                    </select>
+                    <input type="submit" value="Submit"/>
+                </form>
+            </menu>
+        </header>
+
+        <!-- Spooky Theme Light -->
+        <img id="CursorTorch" src="images/SpookyThemeLighting.png" alt="noAlt.png"/>
+        
+        <!-- Bubble Theme Bubbles -->
+        <img class="Bubbles" style="top: 22%; left: 10%;" src="images/Bubble.png" alt="noAlt.png"/>
+        <img class="Bubbles" style="top: 50%; left: 33%;" src="images/Bubble.png" alt="noAlt.png"/>
+        <img class="Bubbles" style="top: 45%; left: 67%;" src="images/Bubble.png" alt="noAlt.png"/>
+        <img class="Bubbles" style="top: 90%; left: 12%;" src="images/Bubble.png" alt="noAlt.png"/>
+        <img class="Bubbles" style="top: 20%; left: 70%;" src="images/Bubble.png" alt="noAlt.png"/>
+        <img class="Bubbles" style="top: 23%; left: 33%;" src="images/Bubble.png" alt="noAlt.png"/>
+        <img class="Bubbles" style="top: 45%; left: 97%;" src="images/Bubble.png" alt="noAlt.png"/>
+        <img class="Bubbles" style="top: 5%; left: 2%;" src="images/Bubble.png" alt="noAlt.png"/>
+        <img class="Bubbles" style="top: 33%; left: 22%;" src="images/Bubble.png" alt="noAlt.png"/>
+        <img class="Bubbles" style="top: 27%; left: 83%;" src="images/Bubble.png" alt="noAlt.png"/>
+
+
+
+        <!--
+        ==========================================================================================================
+        ==========================================================================================================
+        =================================== Beginning of Pages Unique Content ====================================
+        ==========================================================================================================
+        ==========================================================================================================
+        -->
+
+        <!-- Title -->
+        <section>
+            <div>
+                <div style="flex: 0 0 300px; margin: 12px; margin-top: 25px; font-size: 2.8em; font-weight: bold; text-align: center;">
+                    Blender <br>
+                </div>
+            </div>
+        </section>
+
+        <!-- Opening Paragraph -->
+        <div class="rowOfObjectsCentered">
+            <div style="flex: 0 0 600px; margin: 12px; text-align: center;">
+                Blender is a program with 12000 buttons. And after years of learning, I know 1535 of those buttons. 
+                So heres a documentation of the many things I have done with those 1535 buttons.
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <!-- 
+        ================================================================================================
+        ========================================= Old Projects =========================================
+        ================================================================================================
+        -->
+
+        <hr class="lineMedium">
+
+        <!-- Old Projects Title -->
+        <div style="flex: 0 0 300px; margin: 16px; font-size: 2em; font-weight: bold; text-align: center;">
+            Old Projects <br>
+        </div>
+
+        <!-- Old Projects Introduction -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 800px; margin: 16px; text-align: left;">
+                    I first started using blender in 2021, and I barely remember what I was doing back then.
+                    But heres a rapid fire collection of the renders I made, with a light explanation of what I might have been doing.
+                </div>
+            </div>
+        </section>
+
+        <!-- Many Small Images -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div class="manySmallItemsGroup">
+                    <div class="manySmallItemsText">
+                        2021/10/30 "TableAndChairTraining" <br>
+                        This may be the first thing I ever made in blender, truly a artifact of the past.
+                    </div>
+                    <div class="manySmallItemsImages">
+                        <img width="250px" src="images/blender/oldRenders/TableAndChairTraining.jpg"/>
+                    </div>
+                </div>
+
+                <div class="manySmallItemsGroup">
+                    <div class="manySmallItemsText">
+                        2021/11/2 "PumpkinFinalRender" <br>
+                        It was halloween so I made a Pumpkin. Learned about subsurface scattering.
+                        I remember back then sitting and watching as the renders slowly denoised on my ancient computer, watching as it slowly improved.
+                    </div>
+                    <div class="manySmallItemsImages">
+                        <img width="250px" src="images/blender/oldRenders/PumkinFinalRender.jpg"/>
+                    </div>
+                </div>
+
+                <div class="manySmallItemsGroup">
+                    <div class="manySmallItemsText">
+                        2021/11/3 "Frog" <br>
+                        I made a frog I guess.
+                    </div>
+                    <div class="manySmallItemsImages">
+                        <img width="250px" src="images/blender/oldRenders/Frog.jpg"/>
+                    </div>
+                </div>
+
+                <div class="manySmallItemsGroup">
+                    <div class="manySmallItemsText">
+                        2021/11/18 "Toaster_PC" <br>
+                        In this one I have learned more about materials. And made a render I thought was funny, the rbg toaster.
+                    </div>
+                    <div class="manySmallItemsImages">
+                        <img width="250px" src="images/blender/oldRenders/ToasterPC.jpg"/>
+                    </div>
+                </div>
+
+                <div class="manySmallItemsGroup">
+                    <div class="manySmallItemsText">
+                        2021/12/12 "RTXGlassWindow" <br>
+                        I think I drew a version of this image in Photoshop, and recreated it in blender with the advanced lighting. As to why it has "RTX" in the name.
+                    </div>
+                    <div class="manySmallItemsImages">
+                        <img width="250px" src="images/blender/oldRenders/RTXGlassWindow.jpg"/>
+                    </div>
+                </div>
+
+                <div class="manySmallItemsGroup">
+                    <div class="manySmallItemsText">
+                        2021/12/23 "MinecraftHillFinal" <br>
+                        Learned some stuff about remeshing to procedurally make the hill. <!--And I guess I got inspired by minecraft animations on yt.-->
+                    </div>
+                    <div class="manySmallItemsImages">
+                        <img width="250px" src="images/blender/oldRenders/MinecraftHillFinal.jpg"/>
+                    </div>
+                </div>
+
+                <div class="manySmallItemsGroup">
+                    <div class="manySmallItemsText">
+                        2022/1/17 "RockyStoneRendered" <br>
+                        This may be the first time I downloaded a PBR material from the internet. And I wanted to see what details it could form.
+                    </div>
+                    <div class="manySmallItemsImages">
+                        <img width="250px" src="images/blender/oldRenders/RockyStoneRendered.jpg"/>
+                    </div>
+                </div>
+
+                <div class="manySmallItemsGroup">
+                    <div class="manySmallItemsText">
+                        2022/4/11 "Donut1" <br>
+                        I actually remember this one very clearly. 
+                        There is a common blender tutorial of how to make a donut, and I wanted to prove that I could do it on my own.
+                        And I think I did successfully did it without the tutorial.
+                    </div>
+                    <div class="manySmallItemsImages">
+                        <img width="250px" src="images/blender/oldRenders/Donut1.jpg"/>
+                    </div>
+                </div>
+
+                <div class="manySmallItemsGroup">
+                    <div class="manySmallItemsText">
+                        2022/5/7 "GrassyHill" <br>
+                        I did some more advanced particle stuff on this one. Remember it took forever to render on that old laptop.
+                    </div>
+                    <div class="manySmallItemsImages">
+                        <img width="250px" src="images/blender/oldRenders/GrassyHill.jpg"/>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="lineMedium">
+
+
+
+
+
+
+
+        <!-- 
+        ==================================================================================================
+        ========================================= Small Projects =========================================
+        ==================================================================================================
+        -->
+
+        <!-- Small Projects Title -->
+        <div style="flex: 0 0 300px; margin: 16px; font-size: 2em; font-weight: bold; text-align: center;">
+            Small Projects <br>
+        </div>
+
+        <!-- Small Projects Introduction -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 800px; margin: 16px; text-align: left;">
+                    There are many individual renders I have made, and here is every single notable one
+                </div>
+            </div>
+        </section>
+
+        <!-- Robot Tonk -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 50px 300px; margin: 16px;">
+                    <img width="450px"" src="images/blender/smallProjects/AnkleAttacker.jpg"/>
+                </div>
+                <div style="flex: 0 0 400px; margin: 16px; text-align: left;">
+                    2022/7/8 "Robot Tonk" <br>
+                    At the time of this I was playing through Elden Ring,
+                    which has hundreds of unique enemy designs. And I wanted to try making a Elden Ring like enemy.
+                    It turns out, industry standard models are way out of my skill.
+                    As the enemy I made even when being very basic looks way lower quality then anything in Elden Ring.
+                    The biggest issue with it is the base surface is too flat, as I should have done some sort of sculpting.
+                    From this project I also learned about blending materials,
+                    which it turns out blender has poor support for and I had to build a node tree and make image masks myself.
+                </div>
+                <div style="flex: 0 50px 300px; margin: 16px;">
+                    <img width="300px"" src="images/blender/smallProjects/AnkleAttacker_RustMixMap.jpg"/>
+                </div>
+            </div>
+        </section>
+
+        <hr class="lineMinor">
+
+        <!-- Realistic Object -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 400px; margin: 16px; text-align: left;">
+                    2022/7/14 "Realistic Object" <br>
+                    At somepoint I wanted to make a render that looked realistic, 
+                    using all the advanced lighting and stuff.
+                    So I modeled this box which required thinking about the PBR material settings more then ever before.
+                    Like the small finger prints are part of the roughness channel,
+                    As in the real world finger print oil would effect the roughness.
+                    While in the past I probably would have put the finger print oil in the albedo channel.
+                    And from the direction my modeling takes, this may the most realistic thing I ever rendered.
+                </div>
+                <div style="flex: 0 50px 300px; margin: 16px;">
+                    <img width="500px"" src="images/blender/smallProjects/Realistic_Metal_Box.jpg"/>
+                </div>
+            </div>
+        </section>
+
+        <hr class="lineMinor">
+
+        <!-- Reflective Room -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 300px; margin: 16px; text-align: left;">
+                    2022/7/22 "Reflective Room" <br>
+                    I learning about blenders Ray Tracing, and realized I could make infinity mirrors that would be impossible in real life.
+                    So after making a very reflective material, and changing the max number of allowed reflections, 
+                    I was able to render the infinity mirror room.
+                </div>
+                <div style="flex: 0 50px 300px; margin: 16px;">
+                    <img width="500px"" src="images/blender/smallProjects/ReflectiveRoom.jpg"/>
+                </div>
+            </div>
+        </section>
+
+        <hr class="lineMinor">
+
+        <!-- Bottle -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 50px 300px; margin: 16px;">
+                    <img width="500px"" src="images/blender/smallProjects/RebujanBottle.jpg"/>
+                </div>
+                <div style="flex: 0 0 200px; margin: 16px; text-align: left;">
+                    2022/12/24 "Bottle" <br>
+                    I have zero memory of this. But appears I got more practice painting textures by hand.
+                </div>
+            </div>
+        </section>
+
+        <hr class="lineMinor">
+
+
+
+        <hr class="lineMinor">
+        <!-- Windows Backgrounds -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 350px; margin: 16px; text-align: left;">
+                    2023/3/20 "Windows Background 1" <br>
+                    I wanted to personalize my computer, so I made a windows background.
+                    I used weight paints to control where the trees where, which may have been the first time I did that.
+                    As per usual the materials are the best looking part of it, with the models being passable.
+                    And the sky is just a image I composited in.
+                </div>
+                <div style="flex: 0 50px 300px; margin: 16px;">
+                    <img width="500px"" src="images/blender/smallProjects/WindowsBackground1.jpg"/>
+                </div>
+            </div>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 350px; margin: 16px; text-align: left;">
+                    2023/7/28 "Windows Background 2" <br>
+                    The second windows background I made is very different.
+                    I had gotten quite interested into blenders node based materials.
+                    So I decided to make 45 of those materials for 1 image.
+                    And I really had to get creative to make more materials,
+                    like I discovered a number of new techniques to generate unique textures.
+                    Blenders nodes aren't really intended for generating texture like this,
+                    but I managed to push them to their limits.
+                </div>
+                <div style="flex: 0 50px 300px; margin: 16px;">
+                    <img width="500px"" src="images/blender/smallProjects/WindowsBackground2.jpg"/>
+                </div>
+            </div>
+        </section>
+
+
+        
+        <hr class="lineMinor">
+        <!-- Baked Lighting Example -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 400px; margin: 16px; text-align: left;">
+                    2023/9/22 "Baked Lighting Experiments" <br>
+                    This is from one time I tried out rendering with baked lighting.
+                    The idea of baked lighting is instead of doing real time ray traced mathematics to find what a scene looks like,
+                    you do that math and save the result in textures. And then just re-render the scene using those textures.
+                    The result I got was ok, you can see some issues at the borders of objects.
+                    And it appears I didn't use a Denoiser, maybe this is because I thought it looked cool.
+                    I also really faced the reality of the massive texture size necessary for this rendering to look good.
+                    I also learned your lighting has to be very diffuse for the result to look passable.
+                </div>
+                <div style="flex: 0 50px 300px; margin: 16px;">
+                    <img width="500px"" src="images/blender/smallProjects/BakedLightingSceneExample.jpg"/>
+                </div>
+            </div>
+        </section>
+
+        <hr class="lineMinor">
+        <!-- Stylization -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 350px; margin: 16px; text-align: left;">
+                    2023/6/11 "Style Scene" <br>
+                    I wanted to make a non-realistic rendered scene, like stylized rendering.
+                    And I made something, but you don't need a design degree to say this image looks garbage.
+                    There ain't no color palette, no composition, no lighting, and most importantly no style.
+                </div>
+                <div style="flex: 0 50px 300px; margin: 16px; margin-right: 0px;">
+                    <img width="500px"" src="images/blender/smallProjects/OldStylisedScene.jpg"/>
+                </div>
+            </div>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 50px 300px; margin: 16px; margin-right: 0px;">
+                    <img width="500px"" src="images/blender/smallProjects/StreetStylisedLighting.jpg"/>
+                </div>
+                <div style="flex: 0 0 350px; margin: 16px; text-align: left;">
+                    2024/1/26 "Stylized Street Scene" <br>
+                    But multiple months later I returned, motivated to make style.
+                    Because I had gained a fragment of knowledge about stylized rendering.
+                    That good stylized rendering often modifies realistic rendering, 
+                    instead of going on a completely new path.
+                    So I modified realistic rendering until it looked like this.
+                    And it came out baked.
+                </div>
+            </div>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 120px; margin: 16px; text-align: left; margin-right: 0;">
+                    I also made a explanation of the node tree behind the shader for a friend.
+                </div>
+                <div style="flex: 0 50px 300px; margin: 16px;">
+                    <img width="500px"" src="images/blender/smallProjects/StylisedRenderingNodeTreeExplanation.jpg"/>
+                </div>
+            </div>
+        </section>
+
+        <hr class="lineMinor">
+        <!-- Woven Chair -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 400px; margin: 16px; text-align: left;">
+                    2024/4/12 "Woven Chair" <br>
+                    Back in 2022/12/25 I was learning about the concept of baking high quality sculpting into normal maps.
+                    So I started to make a woven chair model to do normal map baking with.
+                    I sculpted one of the legs then got bored and switched projects.
+                    So 2 years later I eventually returned to the project, wanting to finish halfway done projects.
+                    And I sculpted the chair and completely forgot about the part where I wanted to bake it into a normal map.
+                    It also looked really bad so I tossed a shiny material on it to make it look better.
+                </div>
+                <div style="flex: 0 50px 300px; margin: 16px;">
+                    <img width="500px"" src="images/blender/smallProjects/WovenChair.jpg"/>
+                </div>
+            </div>
+        </section>
+
+
+        <hr class="lineMinor">
+        <!-- Realistic Room -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 250px; margin: 16px; text-align: left;">
+                    2024/4/19 "Realistic Modern Room" <br>
+                    I wanted to make a render that looked realistic.
+                    So I kept it simple and it came out sorta realistic.
+                </div>
+                <div style="flex: 0 50px 300px; margin: 16px;">
+                    <img width="500px"" src="images/blender/smallProjects/RealisticRoomRender.jpg"/>
+                </div>
+            </div>
+        </section>
+
+
+        <hr class="lineMinor">
+        <!-- Building Maker -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 400px; margin: 16px; text-align: left;">
+                    2024/5/24 "Procedural Building Maker" <br>
+                    Blender nodes allow you to hypothetically do anything.
+                    Like people have made tree generators, vine generators, terrain generators,
+                    all within the same set of nodes.
+                    So I attempted to replicate the epicness of those generators, by making a building generator.
+                    And as I started to build out this node tree it started to get larger and larger.
+                    I also had to use many tricks like using the vertices on a circle to place objects in square.
+                    And by the end I managed to make a passable building generator.
+                </div>
+                <div style="flex: 0 50px 300px; margin: 16px; margin-right: 4px;">
+                    <img width="300px"" src="images/blender/smallProjects/ProceduralBuildingRender1.jpg"/>
+                </div>
+                <div style="flex: 0 50px 300px; margin: 16px; margin-left: 4px;">
+                    <img width="300px"" src="images/blender/smallProjects/ProceduralBuildingRender2.jpg"/>
+                </div>
+            </div>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 50px 300px; margin: 16px; margin-right: 0px;">
+                    <img width="500px"" src="images/blender/smallProjects/ProceduralBuildingNodeTree.jpg"/>
+                </div>
+                <div style="flex: 0 0 450px; margin: 16px; text-align: left;">
+                    But the node tree behind the generator is horrible.
+                    Like I even put a couple more hours into trying to make it clean, but I couldn't make it better.
+                    I had taken Blenders geometry nodes to their limits, 
+                    attempting to make something complicated enough that it was extremely difficult.
+                    Like if I had made this generator with python code, it would have been way easier.
+                    I might re-do this project but with some sort of code to blender integration.
+                    But that would be a new tool to learn, and I technically made something passable.
+                </div>
+            </div>
+        </section>
+
+        
+
+        <hr class="lineMinor">
+        <!-- Walking Animation -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 450px; margin: 16px; text-align: left;">
+                    2024/5/26 "Walking Animation" <br>
+                    Animation is hard. <br>
+                    Back in the way when I did lego stop motions, which may be the most entry level animation ever,
+                    It was still super difficult.
+                    Friend's who do animation will have 10s of hours go into 20 seconds of media.
+                    And I wanted to see if I could manage a walking animation.
+                    So I made a silly robot in blender, painted its bones, and got animating.
+                    It turns out animating walking is hard as like in the real world you kinda just walk
+                    but when animating it you have to think about how you walk and thats like something I
+                    had never even considered before.
+                    But I did technically make a walking animation.
+                    And its passable because its on a robot. If it where on a organic creature it would look horrible.
+                    Animation is hard. <br>
+                </div>
+                <div style="flex: 0 50px 300px; margin: 16px;">
+                    <img width="500px"" src="images/blender/smallProjects/WalkingAnimationStillFrame.jpg"/>
+                </div>
+            </div>
+        </section>
+
+
+        <hr class="lineMinor">
+        <!-- Earth Model -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 375px; margin: 16px; text-align: left;">
+                    2024/9/2 "Earth Model" <br>
+                    You can just download earth textures from Nasa.
+                    Like in one google search you can get 8k texture of earth collected by satellite.
+                    So I decided to download those textures, to attempt to make a accurate render of earth.
+                    I failed. That render is of earth, but not a accurate earth.
+                    The light for cities is far to bright, and the atmospheric effects are off.
+                    The mistake I made was continually layering new shaders instead of fixing old ones.
+                    Like instead of using the physically accurate emission, I just tossed another shader on.
+                </div>
+                <div style="flex: 0 50px 300px; margin: 16px;">
+                    <img width="500px"" src="images/blender/smallProjects/EarthModelImage.jpg"/>
+                </div>
+            </div>
+        </section>
+
+        <hr class="lineMinor">
+        <!-- Flower Field -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 300px; margin: 16px; text-align: left;">
+                    2024/11/24 "Flower Field Paint over" <br>
+                    I was thinking of ways to stylize a image, like take a realistic image then make it more art like.
+                    And with graphics programming alot of that stylization comes from mathematical algorithms.
+                    But I got the idea to paint over a render it to stylize it.
+                    So I tried this idea and the result came out pretty well.
+                    Also it turns out drawing flowers is difficult.
+                </div>
+                <div style="flex: 0 50px 300px; margin: 16px;">
+                    <img width="500px"" src="images/blender/smallProjects/FlowerFieldBlenderRender.jpg"/>
+                </div>
+                <div style="flex: 0 50px 300px; margin: 16px;">
+                    <img width="500px"" src="images/blender/smallProjects/FlowerFieldStylisation.jpg"/>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+        <!-- 
+        ==================================================================================================
+        ========================================= Major Projects =========================================
+        ==================================================================================================
+        -->
+
+        <hr class="lineMedium">
+
+        <!-- Major Projects Title -->
+        <div style="flex: 0 0 300px; margin: 16px; font-size: 2em; font-weight: bold; text-align: center;">
+            Major Projects <br>
+        </div>
+        
+        <!-- Major Projects Introduction -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 800px; margin: 16px; text-align: left;">
+                    There are some ideas that I haven't just done once, but have returned to again and again.
+                    Here are those major projects that I looked at for months.
+                    <br> <br>
+                    Ok I'm gonna finish this section another time. Also probably split it into separate webpages.
+                </div>
+            </div>
+        </section>
+        <hr class="lineMinor">
+
+
+        <!-- Tree Title -->
+        <div style="flex: 0 0 300px; margin: 16px; font-size: 2em; font-weight: bold; text-align: center;">
+            Realistic Tree <br>
+        </div>
+        <hr class="lineMinor">
+
+
+        <!-- Layered Geometry -->
+        <div style="flex: 0 0 300px; margin: 16px; font-size: 2em; font-weight: bold; text-align: center;">
+            Layered Geometry <br>
+        </div>
+        <hr class="lineMinor">
+
+
+        <!-- Low Poly Western -->
+        <div style="flex: 0 0 300px; margin: 16px; font-size: 2em; font-weight: bold; text-align: center;">
+            Low Poly Western <br>
+        </div>
+        <hr class="lineMinor">
+
+
+        <!-- Texture to Object -->
+        <div style="flex: 0 0 300px; margin: 16px; font-size: 2em; font-weight: bold; text-align: center;">
+            Texture to Object <br>
+        </div>
+
+
+    </body>
+</html>
+
+
+
+
+<!--     
+Fun Fact!: The entirety of this website is powered by this Hamster
+
+                                      ███████████████████████ █                                     
+                  █               █████████████████████████████████                                 
+                █             ██████████                     █████████                              
+              ██           ████████                              ████████                           
+            ██     █     ███████                                     ███████                        
+           ██    █    ███████                                          ██████                       
+          █    ██    █████                                                █████                     
+        █     ██   █████                                                    █████                   
+       █     █    █████                                                       ████                  
+       █    █    ████                                                          █████                
+           █    ████                                                            █████               
+          █   █████                                                              █████              
+         █   █████                                                                █████             
+        █    ████                                                                  ████             
+   █    █   ████                                                                    ████            
+  ██   ██   ████                                                                     ████           
+  █    █   ████                                                                      ████           
+  █    █   ████                                                                       ███    █      
+      ██  ████                                              ████████                  ████   █      
+ ██   █   ████                                             ██      ██                 ████   █      
+ █    █   ████                                            ██    █  ██                ████   █      
+ █    █   ████                                            ██   ███   █                 ███   █    █ 
+ █    █   ████                                            ██  ████  ██                ████   █    █ 
+ █    █   ████                     ███████ ███████        ██   ███   ████████         ████   █    █ 
+ █    █   ████                   ██      █   █     ████    █   ████  █      ███       ████   █    █ 
+  █   ██   ████                ██       ██  █           █  ██  ███  ██   ███  ███     ████  ██    █ 
+  █    █   ████              ██     ███     █           ██  ████         ███    ███  ████   █    ██ 
+  █    █   ████            ███    ██   █   █            █    █                  █████████   █    █  
+        █   ████        █████ █  ██  ██  ███           ██     █                 ████ ███   ██   █   
+        █    ████     ██   █  █ ██  █                 █        █       ██       ██  ████   █    █   
+             █████   █ █  ██   █   █               ██         █         ███   ███ █████   █    █    
+              █████  █ █████       █             ███████      █             ███   ████    █         
+               █████    █ ██       █                    █      █████      ███   █████   ██          
+                █████      █        ██████              █            █  ███     ████   ██           
+                 █████     ██  ██                      ██    █      █████     █████    █            
+                  ██████     ███         █             █     ██   ████      ██████   █              
+                   ███████    █      ████             ██      ████        ██████    █               
+                 ███████████  █    ██████            █ ███      ███     ██████    ██                
+                █████   ████████ ██      ████████████    ███      ██  ██████     █     ██           
+               ████       ████████                          ██████████████     █     ██             
+              ████           █████████                        ██████████           ██               
+             ████                ████████████          █████████████              ██                
+            ████                     ██████████████████████████                ██                   
+            ███                           █ ████████████                     ██                     
+           ████                                                           ██                        
+           ████                                                       ████                          
+           ████                                                     ██                              
+           ████                                                                                     
+           ████                                                                                     
+           █████████████████████████████████████████████████████████████████████████████            
+           ██████████████████████████████████████████████████████████████████████████████                                                                                                                                                                                                        
+-->

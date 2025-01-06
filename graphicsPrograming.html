@@ -1,0 +1,213 @@
+<!-- html setup -->
+<!DOCTYPE html>
+<!-- Setting up a Listener to move the torch as every mouse movement -->
+<html lang="en" onmousemove="mainTorchMovement(event)">
+
+
+
+    <!-- ============================================================================================== -->
+    <!-- =========================================== Header =========================================== -->
+    <!-- ============================================================================================== -->
+    <head>
+        <!-- Setting the Title and Icon -->
+        <title>J.Kom Graphics Programming</title>
+        <link rel="icon" type="image/x-icon" href="images/favicon.png">
+
+        <!-- Setting information on how a page should be displayed based on the device -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- ============================================= CSS ============================================= -->
+        <!-- Importing the main CSS file -->
+        <link rel="stylesheet" href="mainCSS.css">
+
+        <!-- ============================================= Scripts ============================================= -->
+        <script src="mainJS.js"></script> 
+
+    </head>
+
+
+
+    <!-- ============================================================================================== -->
+    <!-- ========================================== HTMLBody ========================================== -->
+    <!-- ============================================================================================== -->
+    <body onload="setupWebsite();">
+
+        <!-- Main Header of Website -->
+        <header>
+            <!-- Sets up the follow items to exist in a flex box -->
+            <menu id="topMenu">
+                <!-- Logo in Top Left -->
+                <li class="topMenuOption" style="flex-shrink: 100%;"><a class="topMenuOptionText" href="index.html">James K's Website</a></li>
+
+                <!-- Can link to different pages with href="Page.html"-->
+                <li class="topMenuOption"><a class="topMenuOptionText" href="index.html">About</a></li>
+                <li class="topMenuOption"><a class="topMenuOptionText" href="graphicsPrograming.html">Graphics Programming</a></li>
+                <li class="topMenuOption"><a class="topMenuOptionText" href="blender.html">Blender</a></li>
+                <li class="topMenuOption"><a class="topMenuOptionText" href="filmsAndVideos.html">Films and Videos</a></li>
+
+                <!-- Theme selection box -->
+                <form action="javascript:changeTheme()" class="topMenuOption" style="padding: 16px;">
+                    <label class="topMenuOptionText" style="padding: 0px;">Theme</label>
+                    <select id="themeForm">
+                        <option value="Light">Light</option>
+                        <option value="Bubbles">Bubbles</option>
+                        <option value="Dark">Dark</option>
+                        <option value="Spooky">Spooky</option>
+                    </select>
+                    <input type="submit" value="Submit"/>
+                </form>
+            </menu>
+        </header>
+
+        <!-- Spooky Theme Light -->
+        <img id="CursorTorch" src="images/SpookyThemeLighting.png" alt="noAlt.png"/>
+        
+        <!-- Bubble Theme Bubbles -->
+        <img class="Bubbles" style="top: 22%; left: 10%;" src="images/Bubble.png" alt="noAlt.png"/>
+        <img class="Bubbles" style="top: 50%; left: 33%;" src="images/Bubble.png" alt="noAlt.png"/>
+        <img class="Bubbles" style="top: 45%; left: 67%;" src="images/Bubble.png" alt="noAlt.png"/>
+        <img class="Bubbles" style="top: 90%; left: 12%;" src="images/Bubble.png" alt="noAlt.png"/>
+        <img class="Bubbles" style="top: 20%; left: 70%;" src="images/Bubble.png" alt="noAlt.png"/>
+        <img class="Bubbles" style="top: 23%; left: 33%;" src="images/Bubble.png" alt="noAlt.png"/>
+        <img class="Bubbles" style="top: 45%; left: 97%;" src="images/Bubble.png" alt="noAlt.png"/>
+        <img class="Bubbles" style="top: 5%; left: 2%;" src="images/Bubble.png" alt="noAlt.png"/>
+        <img class="Bubbles" style="top: 33%; left: 22%;" src="images/Bubble.png" alt="noAlt.png"/>
+        <img class="Bubbles" style="top: 27%; left: 83%;" src="images/Bubble.png" alt="noAlt.png"/>
+
+
+
+        <!--
+        ==========================================================================================================
+        ==========================================================================================================
+        =================================== Beginning of Pages Unique Content ====================================
+        ==========================================================================================================
+        ==========================================================================================================
+        -->
+
+        <!-- ========================================= Opening Section ========================================= -->
+
+        <!-- Title -->
+        <section>
+            <div>
+                <div style="flex: 0 0 300px; margin: 16px; font-size: 2.8em; font-weight: bold; text-align: center;">
+                    Graphics Programming <br>
+                </div>
+            </div>
+        </section>
+
+        <!-- Opening Paragraph -->
+        <div class="rowOfObjectsCentered">
+            <div style="flex: 0 0 600px; margin: 16px; text-align: center;">
+                Graphics Programming is one of my top hobbies. 
+                As it combines coding, art, and interactivity, which are like my top things.
+            </div>
+        </div>
+
+        <!-- Graphics Programming Example -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 500px; margin: 16px; text-align: left;">
+                    Here is a example of Graphics Programming. 
+                    It is a scene created with coding that it is possible to interact with. <br>
+                     - There is coding in coding up the procedural placement of the grass and fireflies. <br>
+                     - There is art is trying to make the scene look good. <br>
+                     - There is interactivity by the user being able to real time interact with the scene.
+                </div>
+                <div style="flex: 0 0 300px; margin: 16px; margin-left: 0px;">
+                    <img width="450px"" src="images/graphicsPrograming/FireFlySceneEarlyProgress.jpg"/>
+                </div>
+            </div>
+        </section>
+
+        <!-- Zooming in Paragraph -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 500px; margin: 16px; text-align: center;">
+                    So on this page I will share the projects I have completed using Graphics Programming.
+                    Alot of it will just be showing the cool results, but I will also try to explain some of the mathematics and programming behind it.
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================= Ordered Dithering ========================================= -->
+
+        <!-- Title -->
+        <section>
+            <div>
+                <div style="flex: 0 0 300px; margin: 16px; font-size: 2em; font-weight: bold; text-align: center;">
+                    Ordered Dithering <br>
+                </div>
+            </div>
+        </section>
+
+         <!-- Ordered Dithering Example -->
+         <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 500px; margin: 16px; text-align: left;">
+                    I went into the deepest of dives into Ordered Dithering.
+                    Like it really isn't a large subject so I literally covered everything there really is to know on it.
+                    On the Right you can see a example of ordered dithering on a basic sphere.
+                    On the surface level visually it makes it so instead of having a smooth transition of color, a pattern is planted within it.
+                    This creates a interesting stylization effect, as style is implanted into the very pixels. <br>
+                </div>
+                <div style="flex: 0 0 0%; margin: 16px; margin-left: 0px;">
+                    <img width="200px"" src="images/graphicsPrograming/OrderedDitheringSphereExampleDiamonds.PNG"/>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ordered Dithering Explanation -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 1px; margin: 16px; margin-right: 0px;">
+                    <img width="400px"" src="images/graphicsPrograming/OrderedDitheringDemonstration.png"/>
+                </div>
+                <div style="flex: 0 0 420px; margin: 16px; text-align: left;">
+                    In technical terms, this is a subset of dithering, as it is actually creating the appearance of more colors with less.
+                    The is done by mixing a texture, called a ordered dithering map, into the image which pushes the existing colors up or down. (Figure 1) <br>
+                    Then the colors of the image are quantized down to a lower number. (Figure 2) <br>
+                    And the ordered dithering map makes it so a appearance of the original colors are kept, as the original colors where pushed from their original values.
+                    This can also be thought of as the ordered dithering map controlling the order pixels transition to the next closest color. <br>
+                    <br>
+                    This example is quantized to a total of 4 colors.
+                </div>
+            </div>
+        </section>
+
+        <!-- Final Example -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 100px; margin: 16px; text-align: left;">
+                    Many examples of Ordered Dithering.
+                </div>
+                <div style="flex: 0 0 1px; margin: 16px; margin-left: 0px;">
+                    <img width="700px"" src="images/graphicsPrograming/OrderedDitheringCustomMapsExamples.jpg"/>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================= Shell Shading ========================================= -->
+
+        <!-- Title -->
+        <section>
+            <div>
+                <div style="flex: 0 0 300px; margin: 16px; font-size: 2em; font-weight: bold; text-align: center;">
+                    Shell Shading <br>
+                </div>
+            </div>
+        </section>
+
+        <!-- Shell Shading Example -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 300px; margin: 16px; text-align: left;">
+                    I'm currently still working on learning about Shell Shading, but for now heres a example I made in Blender.
+                </div>
+                <div style="flex: 0 0 0%; margin: 16px; margin-left: 0px;">
+                    <img width="600px"" src="images/graphicsPrograming/ShellShadingDemonstrationBlender.jpg"/>
+                </div>
+            </div>
+        </section>
+
+    </body>
+</html>
