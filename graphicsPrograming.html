@@ -192,22 +192,139 @@
         <section>
             <div>
                 <div style="flex: 0 0 300px; margin: 16px; font-size: 2em; font-weight: bold; text-align: center;">
-                    Shell Shading <br>
+                    Shell Texturing <br>
                 </div>
             </div>
         </section>
 
-        <!-- Shell Shading Example -->
+        <!-- Shell Shading Intro -->
         <section>
             <div class="rowOfObjectsCentered">
                 <div style="flex: 0 0 300px; margin: 16px; text-align: left;">
-                    I'm currently still working on learning about Shell Shading, but for now heres a example I made in Blender.
+                    Shell Shading is a graphics technique were multiple layers of geometry are used to add fake a surface having depth.
+                    Its simply having multiple layers of geometry with holes in them.
+                    This is a very basic technique when in comparison to things like parallax mapping, but it still has usages. <br>
+                    <br>
+                    I first touched on Shell Shading in blender were I messed around with layering geometry.
+                    But after tinkering with it for around a year in blender, I decided to go for a proper Implementation in Unity.
                 </div>
                 <div style="flex: 0 0 0%; margin: 16px; margin-left: 0px;">
-                    <img width="600px"" src="images/graphicsPrograming/ShellShadingDemonstrationBlender.jpg"/>
+                    <img width="550px"" src="images/graphicsPrograming/ShellShadingDemonstrationBlender.jpg"/>
                 </div>
             </div>
         </section>
+
+        <!-- Shell Shading Programming Process -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 0%; margin: 16px; margin-left: 0px;">
+                    <img width="300px"" src="images/graphicsPrograming/ShellShadingTransformationGlicth1.jpg"/>
+                </div>
+                <div style="flex: 0 0 0%; margin: 16px; margin-left: 0px;">
+                    <img width="300px"" src="images/graphicsPrograming/ShellShadingTransformationGlicth2.jpg"/>
+                </div>
+                <div style="flex: 0 0 300px; margin: 16px; text-align: left;">
+                    Making this in Unity was quite a challenge as it was the second time I had seriously diverged from tutorials.
+                    But I know this experience based learning is very powerful so I just went for it.
+                    It took alot of reading Unity's documentation to get GPU instancing working for efficiently rendering the many layers.
+                    Then it took alot of hassling to get transformations to properly apply to the layers.
+                    I especially had some trouble with the bounding box center for the Instancing call being used as the center of the world.
+                    Seen the the right are some glitches I ran into while trying to get the code to run.
+                </div>
+            </div>
+        </section>
+
+        <!-- Shell Shading Color Fading -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 300px; margin: 16px; text-align: left;">
+                    Once I had a basic implementation I decided to add some bonus features.
+                    Color Fading:
+                    I added the ability to have lower levels of the Texture have fade into a color.
+                    The most common use of this is to fake ambient occlusion, where lower levels would have less light reaching them.
+                </div>
+                <div style="flex: 0 0 0%; margin: 16px; margin-left: 0px;">
+                    <img width="550px"" src="images/graphicsPrograming/ShellTexturingLayerFadingDemo.jpg"/>
+                </div>
+            </div>
+        </section>
+
+        <!-- Shell Shading Layer Attenuation -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 0%; margin: 16px; margin-left: 0px;">
+                    <img width="500px"" src="images/graphicsPrograming/ShellTexturingLayerAttenuation.jpg"/>
+                </div>
+                <div style="flex: 0 0 300px; margin: 16px; text-align: left;">
+                    Layer Attenuation:
+                    I also added layer attenuation, where the layers near the bottom have more distance between them,
+                    and the layers at the top have less distance between them.
+                    This helps improve the appearance of the layers, as the layers at the bottom have less transparency,
+                    meaning generally less layers are necessary there to create a convincing illusion of volume.
+                    Then layers at the top are much thinner, meaning the illusion of volume is usually worse,
+                    so it benefits from less space between the layers.
+                </div>
+            </div>
+        </section>
+
+        <!-- Shell Shading Optimization -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 450px; margin: 16px; text-align: left;">
+                    There is a concept in computer graphics of overdraw.
+                    I don't know all the precise details, but I know when geometry to layered up
+                    a pixel can end up being written too multiple times when the GPU is figuring which layer of geometry is closest to the camera.
+                    And that writing to multiple times is slow, so its best to have the geometry closest to the camera be tested first.
+                    <br>
+                    <br>
+                    And I though this optimization could be applied to this shader, as it draws layers of geometry all on top of each other.
+                    So I did a test and found it runs significantly faster the layers are drawn closest to farthest.
+                    The Average Frame Rate being 200 higher with the reversed render order.
+                    I wasn't sure if the optimization would apply here but it absolutely dose.
+                </div>
+                <div style="flex: 0 0 0%; margin: 16px; margin-left: 0px;">
+                    <img width="550px"" src="images/graphicsPrograming/ShellTexturingOrderOptimization.jpg"/>
+                </div>
+            </div>
+        </section>
+
+        <!-- Shell Shading Journal -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 200px; margin: 16px; text-align: left; margin-right: 1px;">
+                    Heres a couple pages of my notes from when solving the problems that came up in this process.
+                </div>
+                <div style="flex: 0 0 0%; margin: 16px; margin-left: 0px;">
+                    <img width="250px"" src="images/graphicsPrograming/ShellTexturingJournalLayerAttenuation.jpg"/>
+                </div>
+                <div style="flex: 0 0 0%; margin: 16px; margin-left: 0px;">
+                    <img width="250px"" src="images/graphicsPrograming/ShellTexturingJournalLayerColorFading.jpg"/>
+                </div>
+            </div>
+        </section>
+
+        <!-- Shell Shading Optimization -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 300px; margin: 16px; text-align: left;">
+                    This implementation isn't perfect, it's lighting model is still lacking.
+                    Theres alot of optimizations that could be applied to the math in the shader,
+                    Like every layer still involves the construction of a full rotation matrix.
+                    But it is good enough for me.
+                    So here is a series of renders I made using the it.
+                </div>
+                <div style="flex: 0 0 0%; margin: 16px; margin-left: 0px;">
+                    <img width="650px"" src="images/graphicsPrograming/ShellTexturingCityRender.jpg"/>
+                </div>
+                <div style="flex: 0 0 0%; margin: 16px; margin-left: 0px;">
+                    <img width="300px"" src="images/graphicsPrograming/ShellTexturingDemoTubeRender.jpg"/>
+                </div>
+                <div style="flex: 0 0 0%; margin: 16px; margin-left: 0px;">
+                    <img width="400px"" src="images/graphicsPrograming/ShellTexturingDemoBrickSphere.jpg"/>
+                </div>
+            </div>
+        </section>
+
 
     </body>
 </html>
