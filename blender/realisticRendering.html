@@ -1,0 +1,279 @@
+<!-- html setup -->
+<!DOCTYPE html>
+<!-- Setting up a Listener to move the torch as every mouse movement -->
+<html lang="en" onmousemove="mainTorchMovement(event)">
+
+
+
+    <!-- ============================================================================================== -->
+    <!-- =========================================== Header =========================================== -->
+    <!-- ============================================================================================== -->
+    <!-- The <head> tag is used for the setup of meta data, and pauses for loading separate files -->
+    <head>
+        <!-- Setting the Title and Icon -->
+        <title>J.Kom Blender</title>
+        <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+
+        <!-- Setting information on how a page should be displayed based on the device -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- ============================================= CSS ============================================= -->
+        <!-- Importing the main CSS file -->
+        <link rel="stylesheet" href="/mainCSS.css">
+
+        <!-- ============================================= Scripts ============================================= -->
+        <script src="/mainJS.js"></script> 
+
+        <!-- Updating the Theme's colors before any rendering Begins -->
+        <script>
+            updateTheme();
+        </script>
+    </head>
+
+
+
+    <!-- ============================================================================================== -->
+    <!-- ========================================== HTMLBody ========================================== -->
+    <!-- ============================================================================================== -->
+    <body onload="setupWebsite();">
+
+        <!-- Loading the header and setups, the html is fetched from a separate file with javascript. -->
+        <!-- The <a> element is used to avoid the creation of a scrolling container, so scrolling context remains within <body> -->
+        <!-- There may be a more appropriate non block level for holding these elements. -->
+        <a id="headerAndSetup"></a>
+
+        <!-- Executing the code behind loading the header, and updating theme assets. As ideally this is done as soon as possible in Loading. -->
+        <script>loadHeader();</script>
+
+        <!--
+        ==========================================================================================================
+        ==========================================================================================================
+        =================================== Beginning of Pages Unique Content ====================================
+        ==========================================================================================================
+        ==========================================================================================================
+        -->
+
+        <!-- Title -->
+        <section>
+            <div>
+                <div style="flex: 0 0 300px; margin: 12px; margin-top: 25px; font-size: 2.8em; font-weight: bold; text-align: center;">
+                    Realistic Rendering <br>
+                </div>
+            </div>
+        </section>
+
+        <!-- Explanation of the Topic -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 500px; margin: 16px; text-align: left;">
+                    In 2022 I played some videos with very realistic graphics, specifically Elden Ring and Red Dead Redemption 2.
+                    And that inspired me to create realistic models, and realistic renders.
+                    <br>
+                    <br>
+                    But as it turns out, making anything look realistic is quiet difficult.
+                    So I would have to go on a full voyage over the course of years to make it happen.
+                </div>
+            </div>
+        </section>
+
+        <hr class="lineMinor">
+
+        <!-- Robot Tonk -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 50px 300px; margin: 16px;">
+                    <img width="450px"" src="/images/blender/smallProjects/AnkleAttacker.jpg"/>
+                </div>
+                <div style="flex: 0 0 400px; margin: 16px; text-align: left;">
+                    2022/7/8 "Robot Tonk" <br>
+                    Elden Ring has 100s of unique enemy designs, and I wanted to try making one.
+                    It turns out, industry standard models are way out of my skill.
+                    As the enemy I made even when being very basic looks way lower quality then anything in Elden Ring.
+                    The biggest issue with it is the base surface is too flat, as I should have done some sort of sculpting.
+                    From this project I also learned about blending materials,
+                    which it turns out blender has poor support for and I had to build a node tree and make image masks myself.
+                </div>
+                <div style="flex: 0 50px 300px; margin: 16px;">
+                    <img width="300px"" src="/images/blender/smallProjects/AnkleAttacker_RustMixMap.jpg"/>
+                </div>
+            </div>
+        </section>
+
+        <hr class="lineMinor">
+
+        <!-- Realistic Object -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 400px; margin: 16px; text-align: left;">
+                    2022/7/14 "Realistic Object" <br>
+                    This box is simple, but it's materials are not.
+                    I learnt about PBR material while texturing this, and it turns out light physics are quiet complicated.
+                    Like the small finger prints are part of the roughness channel,
+                    As in the real world finger print oil would effect the roughness.
+                    While in the past I probably would have put the finger print oil in the albedo channel.
+                    So this is a step in direction of being able to model materials accurately.
+                </div>
+                <div style="flex: 0 50px 300px; margin: 16px;">
+                    <img width="500px"" src="/images/blender/smallProjects/Realistic_Metal_Box.jpg"/>
+                </div>
+            </div>
+        </section>
+
+        <hr class="lineMinor">
+
+        <!-- Reflective Room -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 300px; margin: 16px; text-align: left;">
+                    2022/7/22 "Reflective Room" <br>
+                    I learning about blenders Ray Tracing, and realized I could make infinity mirrors that would be impossible in real life.
+                    So after making a very reflective material, and changing the max number of allowed reflections, 
+                    I was able to render the infinity mirror room.
+                </div>
+                <div style="flex: 0 50px 300px; margin: 16px;">
+                    <img width="500px"" src="/images/blender/smallProjects/ReflectiveRoom.jpg"/>
+                </div>
+            </div>
+        </section>
+
+        <hr class="lineMinor">
+
+        <!-- Bottle -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 50px 300px; margin: 16px;">
+                    <img width="500px"" src="/images/blender/smallProjects/RebujanBottle.jpg"/>
+                </div>
+                <div style="flex: 0 0 200px; margin: 16px; text-align: left;">
+                    2022/12/24 "Bottle" <br>
+                    This bottle is'nt particularly realistic, but while modeling it I learnt texture painting in blender.
+                    Which is a a sort of digital painting system, allowing drawing unique textures.
+                </div>
+            </div>
+        </section>
+
+        <hr class="lineMinor">
+        <!-- Woven Chair -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 400px; margin: 16px; text-align: left;">
+                    2024/4/12 "Woven Chair" <br>
+                    Back in 2022/12/25 I was learnt about baking high quality sculpted models into normal maps.
+                    Which allows for rendering super detailed models very efficiently.
+                    So I started to make this woven chair model to try normal map baking on.
+                    <br>
+                    <br>
+                    On the right you can see the max quality chair with 850,000 triangles.
+                    And two chairs with significantly lower triangles, but similar qualities.
+                    The difference between the two chairs with baked normals, is in one I used a hand modeled approximation of the chair.
+                    And in the other I used a decimated version of the HD model, which helped preserve some detail, but also looks a bit too lumpy.
+                </div>
+                <div style="flex: 0 50px 300px; margin: 16px;">
+                    <img width="700px"" src="/images/blender/wovenChairBakingNormalsDemo.jpg"/>
+                </div>
+            </div>
+        </section>
+
+
+        <hr class="lineMinor">
+        <!-- Realistic Room -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 250px; margin: 16px; text-align: left;">
+                    2024/4/19 "Realistic Modern Room" <br>
+                    I wanted to make a render that looked realistic.
+                    So I kept it simple and it came out sorta realistic.
+                </div>
+                <div style="flex: 0 50px 300px; margin: 16px;">
+                    <img width="500px"" src="/images/blender/smallProjects/RealisticRoomRender.jpg"/>
+                </div>
+            </div>
+        </section>
+
+        <hr class="lineMinor">
+        <!-- Walking Animation -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 450px; margin: 16px; text-align: left;">
+                    2024/5/26 "Walking Animation" <br>
+                    Animation is hard. <br>
+                    Back in the way when I did lego stop motions, which may be the most entry level animation ever,
+                    It was still super difficult.
+                    Friend's who do animation will have 10s of hours go into 20 seconds of media.
+                    And I wanted to see if I could manage a walking animation.
+                    So I made a silly robot in blender, painted its bones, and got animating.
+                    It turns out animating walking is hard as like in the real world you kinda just walk
+                    but when animating it you have to think about how you walk and thats like something I
+                    had never even considered before.
+                    But I did technically make a walking animation.
+                    And its passable because its on a robot. If it where on a organic creature it would look horrible.
+                    Animation is hard. <br>
+                </div>
+                <div style="flex: 0 50px 300px; margin: 16px;">
+                    <img width="500px"" src="/images/blender/smallProjects/WalkingAnimationStillFrame.jpg"/>
+                </div>
+            </div>
+        </section>
+
+
+        <hr class="lineMinor">
+        <!-- Earth Model -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 375px; margin: 16px; text-align: left;">
+                    2024/9/2 "Earth Model" <br>
+                    You can just download earth textures from Nasa.
+                    Like in one google search you can get 8k texture of earth collected by satellite.
+                    So I decided to download those textures, to attempt to make a accurate render of earth.
+                    I failed. That render is of earth, but not a accurate earth.
+                    The light for cities is far to bright, and the atmospheric effects are off.
+                    The mistake I made was continually layering new shaders instead of fixing old ones.
+                    Like instead of using the physically accurate emission, I just tossed another shader on.
+                </div>
+                <div style="flex: 0 50px 300px; margin: 16px;">
+                    <img width="500px"" src="/images/blender/smallProjects/EarthModelImage.jpg"/>
+                </div>
+            </div>
+        </section>
+
+
+        <hr class="lineMinor">
+        <!-- Building Maker -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 400px; margin: 16px; text-align: left;">
+                    2024/5/24 "Procedural Building Maker" <br>
+                    Blender nodes allow you to hypothetically do anything.
+                    Like people have made tree generators, vine generators, terrain generators,
+                    all within the same set of nodes.
+                    So I attempted to replicate the epicness of those generators, by making a building generator.
+                    And as I started to build out this node tree it started to get larger and larger.
+                    I also had to use many tricks like using the vertices on a circle to place objects in square.
+                    And by the end I managed to make a passable building generator.
+                </div>
+                <div style="flex: 0 50px 300px; margin: 16px; margin-right: 4px;">
+                    <img width="300px"" src="/images/blender/smallProjects/ProceduralBuildingRender1.jpg"/>
+                </div>
+                <div style="flex: 0 50px 300px; margin: 16px; margin-left: 4px;">
+                    <img width="300px"" src="/images/blender/smallProjects/ProceduralBuildingRender2.jpg"/>
+                </div>
+            </div>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 50px 300px; margin: 16px; margin-right: 0px;">
+                    <img width="500px"" src="/images/blender/smallProjects/ProceduralBuildingNodeTree.jpg"/>
+                </div>
+                <div style="flex: 0 0 450px; margin: 16px; text-align: left;">
+                    But the node tree behind the generator is horrible.
+                    Like I even put a couple more hours into trying to make it clean, but I couldn't make it better.
+                    I had taken Blenders geometry nodes to their limits, 
+                    attempting to make something complicated enough that it was extremely difficult.
+                    Like if I had made this generator with python code, it would have been way easier.
+                    I might re-do this project but with some sort of code to blender integration.
+                    But that would be a new tool to learn, and I technically made something passable.
+                </div>
+            </div>
+        </section>
+
+    </body>
+</html>
+

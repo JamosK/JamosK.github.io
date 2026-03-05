@@ -1,0 +1,134 @@
+<!-- html setup -->
+<!DOCTYPE html>
+<!-- Setting up a Listener to move the torch as every mouse movement -->
+<html lang="en" onmousemove="mainTorchMovement(event)">
+
+
+    <!-- ============================================================================================== -->
+    <!-- =========================================== Header =========================================== -->
+    <!-- ============================================================================================== -->
+    <!-- The <head> tag is used for the setup of meta data, and pauses for loading separate files -->
+    <head>
+        <!-- Setting the Title and Icon -->
+        <title>J.Kom Graphics Programming</title>
+        <link rel="icon" type="/image/x-icon" href="/images/favicon.png">
+
+        <!-- Setting information on how a page should be displayed based on the device -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- ============================================= CSS ============================================= -->
+        <!-- Importing the main CSS file -->
+        <link rel="stylesheet" href="/mainCSS.css">
+
+        <!-- ============================================= Scripts ============================================= -->
+        <script src="/mainJS.js"></script> 
+
+        <!-- Updating the Theme's colors before any rendering Begins -->
+        <script>
+            updateTheme();
+        </script>
+    </head>
+
+
+
+    <!-- ============================================================================================== -->
+    <!-- ========================================== HTMLBody ========================================== -->
+    <!-- ============================================================================================== -->
+    <body onload="setupWebsite();">
+
+        <!-- Loading the header and setups, the html is fetched from a separate file with javascript. -->
+        <!-- The <a> element is used to avoid the creation of a scrolling container, so scrolling context remains within <body> -->
+        <!-- There may be a more appropriate non block level for holding these elements. -->
+        <a id="headerAndSetup"></a>
+
+        <!-- Executing the code behind loading the header, and updating theme assets. As ideally this is done as soon as possible in Loading. -->
+        <script>loadHeader();</script>
+
+        <!--
+        ==========================================================================================================
+        ==========================================================================================================
+        =================================== Beginning of Pages Unique Content ====================================
+        ==========================================================================================================
+        ==========================================================================================================
+        -->
+
+        <!-- ========================================= Opening Section ========================================= -->
+
+        <!-- Title -->
+        <section>
+            <div>
+                <div style="flex: 0 0 300px; margin: 16px; font-size: 2.8em; font-weight: bold; text-align: center;">
+                    Custom Ordered Dithering <br>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================= Ordered Dithering ========================================= -->
+
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 500px; margin: 16px; text-align: left;">
+                    Dithering is the act of creating the illusion of many colors with only a few.
+                    To the right are some examples of common Dither Techniques achieved through photoshop.
+                    Every filtered image only has two colors, white and black, but the quality of the image varies by the method of dithering used.
+                    This is what dithering typically does, create more with less.<br>
+                    And in the space of Stylized Graphics, it may be used to add more flair to images. <br>
+                    <br>
+                    And well I had a idea, if the goal is to add flair, why use a mathematically well rounded dithering technique?<br>
+                    Why not use a dithering technique that loses data, but looks cool?
+                    <br>
+
+                </div>
+                <div style="flex: 0 0 0%; margin: 16px; margin-left: 0px;">
+                    <img width="350px"" src="/images/graphicsPrograming/DitheringConceptAndMethodsExample.png"/>
+                </div>
+            </div>
+        </section>
+
+         <!-- Ordered Dithering Example -->
+         <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 500px; margin: 16px; text-align: left;">
+                    So I did some research into different computer graphics dithering techniques.
+                    And the one which lended itself best to stylization was ordered dithering.
+                    As ordered dithering maps use a texture to determine the dithering order,
+                     so I could hop into the code and create my own less accurate but more fun maps.
+                    <br>
+                </div>
+                <div style="flex: 0 0 0%; margin: 16px; margin-left: 0px;">
+                    <img width="200px"" src="/images/graphicsPrograming/OrderedDitheringSphereExampleDiamonds.PNG"/>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ordered Dithering Explanation -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 1px; margin: 16px; margin-right: 0px;">
+                    <img width="400px"" src="/images/graphicsPrograming/OrderedDitheringDemonstration.png"/>
+                </div>
+                <div style="flex: 0 0 420px; margin: 16px; text-align: left;">
+                    In technical terms, this is a subset of dithering, as it is actually creating the appearance of more colors with less.
+                    The is done by mixing a texture, called a ordered dithering map, into the image which pushes the existing colors up or down. (Figure 1) <br>
+                    Then the colors of the image are quantized down to a lower number. (Figure 2) <br>
+                    And the ordered dithering map makes it so a appearance of the original colors are kept, as the original colors where pushed from their original values.
+                    This can also be thought of as the ordered dithering map controlling the order pixels transition to the next closest color. <br>
+                    <br>
+                    This example is quantized to a total of 4 colors.
+                </div>
+            </div>
+        </section>
+
+        <!-- Final Example -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 100px; margin: 16px; text-align: left;">
+                    Many examples of Ordered Dithering.
+                </div>
+                <div style="flex: 0 0 1px; margin: 16px; margin-left: 0px;">
+                    <img width="700px"" src="/images/graphicsPrograming/OrderedDitheringCustomMapsExamples.jpg"/>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

@@ -4,9 +4,11 @@
 
 
 body {
-    margin: 2px;
-    padding: 2px;
+    margin: 0px;
+    padding: 0px;
     z-index: 100;
+
+    background-image: url("/images/backgroundPattern.png");
 
     background-color: var(--Color1);
 }
@@ -72,7 +74,7 @@ header {
     --Color2:rgb(232, 240, 151);
     --Color3:rgb(202, 170, 39);
     --Color4:rgb(185, 170, 0);
-    --Color5:rgb(143, 95, 0);
+    --Color5:rgb(110, 74, 0);
 }
 
 /* Values for the headers Flex options. There are different options for flex containers and flex items. */
@@ -81,8 +83,11 @@ header {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    /*overflow: hidden; */
     background-color: var(--Color3);
+    /* Creating a border on the top and bottom*/
+    border-top: 5px solid var(--Color5);
+    border-bottom: 5px solid var(--Color5);
 
     display: flex;
     /* How items are put together, starting left/center/right */
@@ -96,10 +101,11 @@ header {
 /* Customizes the header List options appearance, not flex layout */
 .topMenuOption {
     /*padding: 16px;*/
-    border: 5px solid var(--Color5);
+    border-left: 5px solid var(--Color5);
+    border-right: 5px solid var(--Color5);  
 
     display: flex;
-    flex-shrink: 20%;
+    flex-shrink: 20%;   
 }
 
 /* Customizes the text within the header List options */
@@ -122,7 +128,7 @@ header {
 
     z-index: 101;
     pointer-events: none;
-    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/TempLighting.png', sizingMethod='scale');
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/images/TempLighting.png', sizingMethod='scale');
     background: none !important;   
 }
 
@@ -135,7 +141,7 @@ header {
     /* Making sure its Click Through */
     z-index: 101;
     pointer-events: none;
-    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/TempLighting.png', sizingMethod='scale');
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/images/TempLighting.png', sizingMethod='scale');
     background: none !important;   
 }
 
@@ -143,6 +149,7 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    padding-bottom: 10px;
 
     flex-wrap: wrap;
 }

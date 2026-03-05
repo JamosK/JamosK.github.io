@@ -11,7 +11,7 @@
     <!-- The <head> tag is used for the setup of meta data, and pauses for loading separate files -->
     <head>
         <!-- Setting the Title and Icon -->
-        <title>J.Kom About</title>
+        <title>J.Kom Blender</title>
         <link rel="icon" type="image/x-icon" href="/images/favicon.png">
 
         <!-- Setting information on how a page should be displayed based on the device -->
@@ -37,7 +37,6 @@
     <!-- ============================================================================================== -->
     <body onload="setupWebsite();">
 
-
         <!-- Loading the header and setups, the html is fetched from a separate file with javascript. -->
         <!-- The <a> element is used to avoid the creation of a scrolling container, so scrolling context remains within <body> -->
         <!-- There may be a more appropriate non block level for holding these elements. -->
@@ -58,31 +57,43 @@
         <section>
             <div>
                 <div style="flex: 0 0 300px; margin: 12px; margin-top: 25px; font-size: 2.8em; font-weight: bold; text-align: center;">
-                    About Me <br>
+                    Low Poly and Optimized Modeling <br>
                 </div>
             </div>
         </section>
 
-        <!-- Woven Chair -->
+        <!-- Opening Paragraph -->
+        <div class="rowOfObjectsCentered">
+            <div style="flex: 0 0 600px; margin: 12px; text-align: center;">
+                In 2023 I went on a journey trying to make the most optimized efficient models possible.
+                Models with low triangle counts, and simple single color shading.
+            </div>
+        </div>
+
+
+        
+        
+        <hr class="lineMinor">
+        <!-- Baked Lighting Example -->
         <section>
             <div class="rowOfObjectsCentered">
                 <div style="flex: 0 0 400px; margin: 16px; text-align: left;">
-                    Hello, welcome to the documentation of every notable project I have finished.
+                    2023/9/22 "Baked Lighting Experiments" <br>
+                    This is from one time I tried out rendering with baked lighting.
+                    The idea of baked lighting is instead of doing real time ray traced mathematics to find what a scene looks like,
+                    you do that math and save the result in textures. And then just re-render the scene using those textures.
+                    The result I got was ok, you can see some issues at the borders of objects.
+                    And it appears I didn't use a Denoiser, maybe this is because I thought it looked cool.
+                    I also really faced the reality of the massive texture size necessary for this rendering to look good.
+                    I also learned your lighting has to be very diffuse for the result to look passable.
                 </div>
                 <div style="flex: 0 50px 300px; margin: 16px;">
-                    <img width="200px"" src="noalt.png"/>
-                </div>
-            </div>
-        </section>
-
-        <!-- Woven Chair -->
-        <section>
-            <div class="rowOfObjectsCentered">
-                <div style="flex: 0 0 400px; margin: 16px; text-align: center;">
-                    So go explore.
+                    <img width="500px"" src="/images/blender/smallProjects/BakedLightingSceneExample.jpg"/>
                 </div>
             </div>
         </section>
 
     </body>
 </html>
+
+

@@ -1,6 +1,6 @@
 <!-- html setup -->
 <!DOCTYPE html>
-<!-- Setting up a Listener to move the torch as every mouse movement -->
+<!-- Setting up a Listener to move the torch on every mouse movement -->
 <html lang="en" onmousemove="mainTorchMovement(event)">
 
 
@@ -8,21 +8,26 @@
     <!-- ============================================================================================== -->
     <!-- =========================================== Header =========================================== -->
     <!-- ============================================================================================== -->
+    <!-- The <head> tag is used for the setup of meta data, and pauses for loading separate files -->
     <head>
         <!-- Setting the Title and Icon -->
         <title>J.Kom Videos</title>
-        <link rel="icon" type="image/x-icon" href="images/favicon.png">
+        <link rel="icon" type="image/x-icon" href="/images/favicon.png">
 
         <!-- Setting information on how a page should be displayed based on the device -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <!-- ============================================= CSS ============================================= -->
         <!-- Importing the main CSS file -->
-        <link rel="stylesheet" href="mainCSS.css">
+        <link rel="stylesheet" href="/mainCSS.css">
 
         <!-- ============================================= Scripts ============================================= -->
-        <script src="mainJS.js"></script> 
+        <script src="/mainJS.js"></script> 
 
+        <!-- Updating the Theme's colors before any rendering Begins -->
+        <script>
+            updateTheme();
+        </script>
     </head>
 
 
@@ -32,49 +37,13 @@
     <!-- ============================================================================================== -->
     <body onload="setupWebsite();">
 
-        <!-- Main Header of Website -->
-        <header>
-            <!-- Sets up the follow items to exist in a flex box -->
-            <menu id="topMenu">
-                <!-- Logo in Top Left -->
-                <li class="topMenuOption" style="flex-shrink: 100%;"><a class="topMenuOptionText" href="index.html">James K's Website</a></li>
+        <!-- Loading the header and setups, the html is fetched from a separate file with javascript. -->
+        <!-- The <a> element is used to avoid the creation of a scrolling container, so scrolling context remains within <body> -->
+        <!-- There may be a more appropriate non block level for holding these elements. -->
+        <a id="headerAndSetup"></a>
 
-                <!-- Can link to different pages with href="Page.html"-->
-                <li class="topMenuOption"><a class="topMenuOptionText" href="index.html">About</a></li>
-                <li class="topMenuOption"><a class="topMenuOptionText" href="graphicsPrograming.html">Graphics Programming</a></li>
-                <li class="topMenuOption"><a class="topMenuOptionText" href="blender.html">Blender</a></li>
-                <li class="topMenuOption"><a class="topMenuOptionText" href="filmsAndVideos.html">Films and Videos</a></li>
-
-                <!-- Theme selection box -->
-                <form action="javascript:changeTheme()" class="topMenuOption" style="padding: 16px;">
-                    <label class="topMenuOptionText" style="padding: 0px;">Theme</label>
-                    <select id="themeForm">
-                        <option value="Light">Light</option>
-                        <option value="Bubbles">Bubbles</option>
-                        <option value="Dark">Dark</option>
-                        <option value="Spooky">Spooky</option>
-                    </select>
-                    <input type="submit" value="Submit"/>
-                </form>
-            </menu>
-        </header>
-
-        <!-- Spooky Theme Light -->
-        <img id="CursorTorch" src="images/SpookyThemeLighting.png" alt="noAlt.png"/>
-        
-        <!-- Bubble Theme Bubbles -->
-        <img class="Bubbles" style="top: 22%; left: 10%;" src="images/Bubble.png" alt="noAlt.png"/>
-        <img class="Bubbles" style="top: 50%; left: 33%;" src="images/Bubble.png" alt="noAlt.png"/>
-        <img class="Bubbles" style="top: 45%; left: 67%;" src="images/Bubble.png" alt="noAlt.png"/>
-        <img class="Bubbles" style="top: 90%; left: 12%;" src="images/Bubble.png" alt="noAlt.png"/>
-        <img class="Bubbles" style="top: 20%; left: 70%;" src="images/Bubble.png" alt="noAlt.png"/>
-        <img class="Bubbles" style="top: 23%; left: 33%;" src="images/Bubble.png" alt="noAlt.png"/>
-        <img class="Bubbles" style="top: 45%; left: 97%;" src="images/Bubble.png" alt="noAlt.png"/>
-        <img class="Bubbles" style="top: 5%; left: 2%;" src="images/Bubble.png" alt="noAlt.png"/>
-        <img class="Bubbles" style="top: 33%; left: 22%;" src="images/Bubble.png" alt="noAlt.png"/>
-        <img class="Bubbles" style="top: 27%; left: 83%;" src="images/Bubble.png" alt="noAlt.png"/>
-
-
+        <!-- Executing the code behind loading the header, and updating theme assets. As ideally this is done as soon as possible in Loading. -->
+        <script>loadHeader();</script>
 
         <!--
         ==========================================================================================================
@@ -84,14 +53,80 @@
         ==========================================================================================================
         -->
 
+        <!-- Title -->
+        <section>
+            <div>
+                <div style="flex: 0 0 300px; margin: 12px; margin-top: 25px; font-size: 2.8em; font-weight: bold; text-align: center;">
+                    Films and Videos <br>
+                </div>
+            </div>
+        </section>
+
         <!-- Intro -->
         <section>
-            <div id="section1">
-                <div style="flex: 0 0 300px; margin: 16px; font-size: large; font-weight: bold; text-align: center;">
-                    Placeholder Text
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 400px; margin: 16px; text-align: center;">
+                    I have been creating videos for a very long time. Either for fun on my own, with friends, or in schools.
+                    I almost even majored in film, but have decided to keep it a hobby.
                 </div>
-                <div style="flex: 0 0 0px; margin: 16px;"></div>
-                <div style="flex: 0 0 0px; margin: 16px;"></div>
+            </div>
+        </section>
+
+        
+
+        <!-- Individual Projects Pages -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <a href="">
+                    <div class="manySmallItemsGroup"">
+                        <div class="manySmallItemsText" style="font-size: 1.7em; font-weight: bold; text-align: center;">
+                            Films
+                            <br>
+                            <br>
+                        </div>
+                        <div class="manySmallItemsImages">
+                            <img width="250px" src="/images/filmsAndVideo/iconFilms.jpg">
+                        </div>
+                    </div>
+                </a>
+
+                <a href="">
+                    <div class="manySmallItemsGroup">
+                        <div class="manySmallItemsText" style="font-size: 1.7em; font-weight: bold; text-align: center;">
+                            Photography
+                            <br>
+                            <br>
+                        </div>
+                        <div class="manySmallItemsImages">
+                            <img width="250px" src="/images/filmsAndVideo/iconPhotography.jpg">
+                        </div>
+                    </div>
+                </a>
+
+                <a href="">
+                    <div class="manySmallItemsGroup">
+                        <div class="manySmallItemsText" style="font-size: 1.7em; font-weight: bold; text-align: center;">
+                            Gaming Challenges
+                            <br>
+                        </div>
+                        <div class="manySmallItemsImages">
+                            <img width="250px" src="/images/filmsAndVideo/iconGamingChallenges.jpg">
+                        </div>
+                    </div>
+                </a>
+
+                <a href="">
+                    <div class="manySmallItemsGroup">
+                        <div class="manySmallItemsText" style="font-size: 1.7em; font-weight: bold; text-align: center;">
+                            Very Unserious Videos
+                            <br>
+                        </div>
+                        <div class="manySmallItemsImages">
+                            <img width="250px" src="/images/filmsAndVideo/iconVeryUnseriousVideos.jpg">
+                        </div>
+                    </div>
+                </a>
+
             </div>
         </section>
 

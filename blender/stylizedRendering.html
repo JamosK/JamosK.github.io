@@ -1,0 +1,175 @@
+<!-- html setup -->
+<!DOCTYPE html>
+<!-- Setting up a Listener to move the torch as every mouse movement -->
+<html lang="en" onmousemove="mainTorchMovement(event)">
+
+
+
+    <!-- ============================================================================================== -->
+    <!-- =========================================== Header =========================================== -->
+    <!-- ============================================================================================== -->
+    <!-- The <head> tag is used for the setup of meta data, and pauses for loading separate files -->
+    <head>
+        <!-- Setting the Title and Icon -->
+        <title>J.Kom Blender</title>
+        <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+
+        <!-- Setting information on how a page should be displayed based on the device -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- ============================================= CSS ============================================= -->
+        <!-- Importing the main CSS file -->
+        <link rel="stylesheet" href="/mainCSS.css">
+
+        <!-- ============================================= Scripts ============================================= -->
+        <script src="/mainJS.js"></script> 
+
+        <!-- Updating the Theme's colors before any rendering Begins -->
+        <script>
+            updateTheme();
+        </script>
+    </head>
+
+
+
+    <!-- ============================================================================================== -->
+    <!-- ========================================== HTMLBody ========================================== -->
+    <!-- ============================================================================================== -->
+    <body onload="setupWebsite();">
+
+        <!-- Loading the header and setups, the html is fetched from a separate file with javascript. -->
+        <!-- The <a> element is used to avoid the creation of a scrolling container, so scrolling context remains within <body> -->
+        <!-- There may be a more appropriate non block level for holding these elements. -->
+        <a id="headerAndSetup"></a>
+
+        <!-- Executing the code behind loading the header, and updating theme assets. As ideally this is done as soon as possible in Loading. -->
+        <script>loadHeader();</script>
+
+        <!--
+        ==========================================================================================================
+        ==========================================================================================================
+        =================================== Beginning of Pages Unique Content ====================================
+        ==========================================================================================================
+        ==========================================================================================================
+        -->
+
+
+
+        <!-- Title -->
+        <section>
+            <div>
+                <div style="flex: 0 0 300px; margin: 12px; margin-top: 25px; font-size: 2.8em; font-weight: bold; text-align: center;">
+                    Stylized Rendering <br>
+                </div>
+            </div>
+        </section>
+
+        <!-- Small Projects Introduction -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 800px; margin: 16px; text-align: left;">
+                    3D Modeling and shading can be realistic, but it can also be very artful.
+                    And many times I have gotten ideas of non-realistic but still style-ful scenes to create.
+                </div>
+            </div>
+        </section>
+
+
+        <hr class="lineMinor">
+        <!-- Windows Backgrounds -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 350px; margin: 16px; text-align: left;">
+                    2023/3/20 "Windows Background 1" <br>
+                    I wanted to personalize my computer, so I made a windows background.
+                    I used weight paints to control where the trees where, which may have been the first time I did that.
+                    As per usual the materials are the best looking part of it, with the models being passable.
+                    And the sky is just a image I composited in.
+                </div>
+                <div style="flex: 0 50px 300px; margin: 16px;">
+                    <img width="500px"" src="/images/blender/smallProjects/WindowsBackground1.jpg"/>
+                </div>
+            </div>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 350px; margin: 16px; text-align: left;">
+                    2023/7/28 "Windows Background 2" <br>
+                    The second windows background I made is very different.
+                    I had gotten quite interested into blenders node based materials.
+                    So I decided to make 45 of those materials for 1 image.
+                    And I really had to get creative to make more materials,
+                    like I discovered a number of new techniques to generate unique textures.
+                    Blenders nodes aren't really intended for generating texture like this,
+                    but I managed to push them to their limits.
+                </div>
+                <div style="flex: 0 50px 300px; margin: 16px;">
+                    <img width="500px"" src="/images/blender/smallProjects/WindowsBackground2.jpg"/>
+                </div>
+            </div>
+        </section>
+
+
+
+        <hr class="lineMinor">
+        <!-- Stylization -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 350px; margin: 16px; text-align: left;">
+                    2023/6/11 "Style Scene" <br>
+                    I wanted to make a non-realistic rendered scene, like stylized rendering.
+                    And I made something, but you don't need a design degree to say this image looks garbage.
+                    There ain't no color palette, no composition, no lighting, and most importantly no style.
+                </div>
+                <div style="flex: 0 50px 300px; margin: 16px; margin-right: 0px;">
+                    <img width="500px"" src="/images/blender/smallProjects/OldStylisedScene.jpg"/>
+                </div>
+            </div>
+            <!-- This is the location the page auto scrolls to -->
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 50px 300px; margin: 16px; margin-right: 0px;">
+                    <img width="500px"" src="/images/blender/smallProjects/StreetStylisedLighting.jpg"/>
+                </div>
+                <div style="flex: 0 0 350px; margin: 16px; text-align: left;">
+                    2024/1/26 "Stylized Street Scene" <br>
+                    But multiple months later I returned, motivated to make style.
+                    Because I had gained a fragment of knowledge about stylized rendering.
+                    That good stylized rendering often modifies realistic rendering, 
+                    instead of going on a completely new path.
+                    So I modified realistic rendering until it looked like this.
+                    And it came out baked.
+                </div>
+            </div>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 120px; margin: 16px; text-align: left; margin-right: 0;">
+                    I also made a explanation of the node tree behind the shader for a friend.
+                </div>
+                <div style="flex: 0 50px 300px; margin: 16px;">
+                    <img width="500px"" src="/images/blender/smallProjects/StylisedRenderingNodeTreeExplanation.jpg"/>
+                </div>
+            </div>
+        </section>
+
+            
+        <hr class="lineMinor">
+        <!-- Flower Field -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 300px; margin: 16px; text-align: left;">
+                    2024/11/24 "Flower Field Paint over" <br>
+                    I was thinking of ways to stylize a image, like take a realistic image then make it more art like.
+                    And with graphics programming alot of that stylization comes from mathematical algorithms.
+                    But I got the idea to paint over a render it to stylize it.
+                    So I tried this idea and the result came out pretty well.
+                    Also it turns out drawing flowers is difficult.
+                </div>
+                <div style="flex: 0 50px 300px; margin: 16px;">
+                    <img width="500px"" src="/images/blender/smallProjects/FlowerFieldBlenderRender.jpg"/>
+                </div>
+                <div style="flex: 0 50px 300px; margin: 16px;">
+                    <img width="500px"" src="/images/blender/smallProjects/FlowerFieldStylisation.jpg"/>
+                </div>
+            </div>
+        </section>
+
+
+    </body>
+</html>

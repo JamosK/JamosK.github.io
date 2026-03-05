@@ -1,0 +1,47 @@
+
+<!-- This html contains the main header of the webpage, along with setup for themes and any other cross page functions I add -->
+
+
+<!-- Sticky and setting a top position guarantees the Header stays at the top of the page. Potential Bug: Theme elements being moved as well?-->
+<header style="position: sticky; inset: 0;">
+    <!-- Sets up the follow items to exist in a flex box -->
+    <menu id="topMenu">
+        <!-- Logo in Top Left -->
+        <li class="topMenuOption" style="flex-shrink: 100%;"><a class="topMenuOptionText" href="/index.html">James K's Website</a></li>
+
+        <!-- Can link to different pages with href="Page.html"-->
+        <li class="topMenuOption"><a class="topMenuOptionText" href="/index.html">About</a></li>
+        <li class="topMenuOption"><a class="topMenuOptionText" href="/graphicsPrograming.html">Graphics Programming</a></li>
+        <li class="topMenuOption"><a class="topMenuOptionText" href="/blender.html">Blender</a></li>
+        <li class="topMenuOption"><a class="topMenuOptionText" href="/filmsAndVideos.html">Films and Videos</a></li>
+
+        <!-- Theme selection box -->
+        <form action="javascript:changeTheme(); updateTheme();" class="topMenuOption" style="padding: 16px;">
+            <label class="topMenuOptionText" style="padding: 0px;">Theme</label>
+            <select id="themeForm">
+                <option value="Light">Light</option>
+                <option value="Bubbles">Bubbles</option>
+                <option value="Dark">Dark</option>
+                <option value="Spooky">Spooky</option>
+            </select>
+            <input type="submit" value="Submit"/>
+        </form>
+    </menu>
+</header>
+
+
+<!-- Creating Spooky Theme Light -->
+<img id="CursorTorch" src="/images/SpookyThemeLighting.png" alt="noAlt.png"/>
+
+
+<!-- Creating Bubble Theme Bubbles -->
+<img class="Bubbles" style="top: 22%; left: 10%;" src="/images/Bubble.png" alt="noAlt.png"/>
+<img class="Bubbles" style="top: 50%; left: 33%;" src="/images/Bubble.png" alt="noAlt.png"/>
+<img class="Bubbles" style="top: 45%; left: 67%;" src="/images/Bubble.png" alt="noAlt.png"/>
+<img class="Bubbles" style="top: 90%; left: 12%;" src="/images/Bubble.png" alt="noAlt.png"/>
+<img class="Bubbles" style="top: 20%; left: 70%;" src="/images/Bubble.png" alt="noAlt.png"/>
+<img class="Bubbles" style="top: 23%; left: 33%;" src="/images/Bubble.png" alt="noAlt.png"/>
+<img class="Bubbles" style="top: 45%; left: 97%;" src="/images/Bubble.png" alt="noAlt.png"/>
+<img class="Bubbles" style="top: 5%; left: 2%;" src="/images/Bubble.png" alt="noAlt.png"/>
+<img class="Bubbles" style="top: 33%; left: 22%;" src="/images/Bubble.png" alt="noAlt.png"/>
+<img class="Bubbles" style="top: 27%; left: 83%;" src="/images/Bubble.png" alt="noAlt.png"/>

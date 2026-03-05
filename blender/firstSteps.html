@@ -1,0 +1,178 @@
+<!-- html setup -->
+<!DOCTYPE html>
+<!-- Setting up a Listener to move the torch as every mouse movement -->
+<html lang="en" onmousemove="mainTorchMovement(event)">
+
+
+
+    <!-- ============================================================================================== -->
+    <!-- =========================================== Header =========================================== -->
+    <!-- ============================================================================================== -->
+    <!-- The <head> tag is used for the setup of meta data, and pauses for loading separate files -->
+    <head>
+        <!-- Setting the Title and Icon -->
+        <title>J.Kom Blender</title>
+        <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+
+        <!-- Setting information on how a page should be displayed based on the device -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- ============================================= CSS ============================================= -->
+        <!-- Importing the main CSS file -->
+        <link rel="stylesheet" href="/mainCSS.css">
+
+        <!-- ============================================= Scripts ============================================= -->
+        <script src="/mainJS.js"></script> 
+
+        <!-- Updating the Theme's colors before any rendering Begins -->
+        <script>
+            updateTheme();
+        </script>
+    </head>
+
+
+
+    <!-- ============================================================================================== -->
+    <!-- ========================================== HTMLBody ========================================== -->
+    <!-- ============================================================================================== -->
+    <body onload="setupWebsite();">
+
+        <!-- Loading the header and setups, the html is fetched from a separate file with javascript. -->
+        <!-- The <a> element is used to avoid the creation of a scrolling container, so scrolling context remains within <body> -->
+        <!-- There may be a more appropriate non block level for holding these elements. -->
+        <a id="headerAndSetup"></a>
+
+        <!-- Executing the code behind loading the header, and updating theme assets. As ideally this is done as soon as possible in Loading. -->
+        <script>loadHeader();</script>
+
+        <!--
+        ==========================================================================================================
+        ==========================================================================================================
+        =================================== Beginning of Pages Unique Content ====================================
+        ==========================================================================================================
+        ==========================================================================================================
+        -->
+
+        <!-- Title -->
+        <section>
+            <div>
+                <div style="flex: 0 0 300px; margin: 12px; margin-top: 25px; font-size: 2.8em; font-weight: bold; text-align: center;">
+                    First Steps <br>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Old Projects Introduction -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 800px; margin: 16px; text-align: left;">
+                    I first started using blender in 2021, and I barely remember what I was doing back then.
+                    But heres a rapid fire of early renders I made, with a light explanation of what I learnt from each one.
+                </div>
+            </div>
+        </section>
+
+        <hr class="lineMinor">
+
+        <!-- Many Small Images -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div class="manySmallItemsGroup">
+                    <div class="manySmallItemsText">
+                        2021/10/30 "TableAndChairTraining" <br>
+                        This may be the first thing I ever made in blender, truly a artifact of the past.
+                    </div>
+                    <div class="manySmallItemsImages">
+                        <img width="250px" src="/images/blender/oldRenders/TableAndChairTraining.jpg"/>
+                    </div>
+                </div>
+
+                <div class="manySmallItemsGroup">
+                    <div class="manySmallItemsText">
+                        2021/11/2 "PumpkinFinalRender" <br>
+                        It was halloween so I made a Pumpkin. Learned about subsurface scattering.
+                        I remember back then sitting and watching as the renders slowly denoised on my ancient computer, watching as it slowly improved.
+                    </div>
+                    <div class="manySmallItemsImages">
+                        <img width="250px" src="/images/blender/oldRenders/PumkinFinalRender.jpg"/>
+                    </div>
+                </div>
+
+                <div class="manySmallItemsGroup">
+                    <div class="manySmallItemsText">
+                        2021/11/3 "Frog" <br>
+                        I made a frog I guess.
+                    </div>
+                    <div class="manySmallItemsImages">
+                        <img width="250px" src="/images/blender/oldRenders/Frog.jpg"/>
+                    </div>
+                </div>
+
+                <div class="manySmallItemsGroup">
+                    <div class="manySmallItemsText">
+                        2021/11/18 "Toaster_PC" <br>
+                        In this one I have learned more about materials. And made a render I thought was funny, the rbg toaster.
+                    </div>
+                    <div class="manySmallItemsImages">
+                        <img width="250px" src="/images/blender/oldRenders/ToasterPC.jpg"/>
+                    </div>
+                </div>
+
+                <div class="manySmallItemsGroup">
+                    <div class="manySmallItemsText">
+                        2021/12/12 "RTXGlassWindow" <br>
+                        I think I drew a version of this image in Photoshop, and recreated it in blender with the advanced lighting. As to why it has "RTX" in the name.
+                    </div>
+                    <div class="manySmallItemsImages">
+                        <img width="250px" src="/images/blender/oldRenders/RTXGlassWindow.jpg"/>
+                    </div>
+                </div>
+
+                <div class="manySmallItemsGroup">
+                    <div class="manySmallItemsText">
+                        2021/12/23 "MinecraftHillFinal" <br>
+                        Learned some stuff about remeshing to procedurally make the hill. <!--And I guess I got inspired by minecraft animations on yt.-->
+                    </div>
+                    <div class="manySmallItemsImages">
+                        <img width="250px" src="/images/blender/oldRenders/MinecraftHillFinal.jpg"/>
+                    </div>
+                </div>
+
+                <div class="manySmallItemsGroup">
+                    <div class="manySmallItemsText">
+                        2022/1/17 "RockyStoneRendered" <br>
+                        This may be the first time I downloaded a PBR material from the internet. And I wanted to see what details it could form.
+                    </div>
+                    <div class="manySmallItemsImages">
+                        <img width="250px" src="/images/blender/oldRenders/RockyStoneRendered.jpg"/>
+                    </div>
+                </div>
+
+                <div class="manySmallItemsGroup">
+                    <div class="manySmallItemsText">
+                        2022/4/11 "Donut1" <br>
+                        I actually remember this one very clearly. 
+                        There is a common blender tutorial of how to make a donut, and I wanted to prove that I could do it on my own.
+                        And I think I did successfully did it without the tutorial.
+                    </div>
+                    <div class="manySmallItemsImages">
+                        <img width="250px" src="/images/blender/oldRenders/Donut1.jpg"/>
+                    </div>
+                </div>
+
+                <div class="manySmallItemsGroup">
+                    <div class="manySmallItemsText">
+                        2022/5/7 "GrassyHill" <br>
+                        I did some more advanced particle stuff on this one. Remember it took forever to render on that old laptop.
+                    </div>
+                    <div class="manySmallItemsImages">
+                        <img width="250px" src="/images/blender/oldRenders/GrassyHill.jpg"/>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </body>
+</html>
+

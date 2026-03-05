@@ -4,25 +4,29 @@
 <html lang="en" onmousemove="mainTorchMovement(event)">
 
 
-
     <!-- ============================================================================================== -->
     <!-- =========================================== Header =========================================== -->
     <!-- ============================================================================================== -->
+    <!-- The <head> tag is used for the setup of meta data, and pauses for loading separate files -->
     <head>
         <!-- Setting the Title and Icon -->
         <title>J.Kom Graphics Programming</title>
-        <link rel="icon" type="image/x-icon" href="images/favicon.png">
+        <link rel="icon" type="image/x-icon" href="/images/favicon.png">
 
         <!-- Setting information on how a page should be displayed based on the device -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <!-- ============================================= CSS ============================================= -->
         <!-- Importing the main CSS file -->
-        <link rel="stylesheet" href="mainCSS.css">
+        <link rel="stylesheet" href="/mainCSS.css">
 
         <!-- ============================================= Scripts ============================================= -->
-        <script src="mainJS.js"></script> 
+        <script src="/mainJS.js"></script> 
 
+       <!-- Updating the Theme's colors before any rendering Begins -->
+        <script>
+            updateTheme();
+        </script>
     </head>
 
 
@@ -31,50 +35,13 @@
     <!-- ========================================== HTMLBody ========================================== -->
     <!-- ============================================================================================== -->
     <body onload="setupWebsite();">
+        <!-- Loading the header and setups, the html is fetched from a separate file with javascript. -->
+        <!-- The <a> element is used to avoid the creation of a scrolling container, so scrolling context remains within <body> -->
+        <!-- There may be a more appropriate non block level for holding these elements. -->
+        <a id="headerAndSetup"></a>
 
-        <!-- Main Header of Website -->
-        <header>
-            <!-- Sets up the follow items to exist in a flex box -->
-            <menu id="topMenu">
-                <!-- Logo in Top Left -->
-                <li class="topMenuOption" style="flex-shrink: 100%;"><a class="topMenuOptionText" href="index.html">James K's Website</a></li>
-
-                <!-- Can link to different pages with href="Page.html"-->
-                <li class="topMenuOption"><a class="topMenuOptionText" href="index.html">About</a></li>
-                <li class="topMenuOption"><a class="topMenuOptionText" href="graphicsPrograming.html">Graphics Programming</a></li>
-                <li class="topMenuOption"><a class="topMenuOptionText" href="blender.html">Blender</a></li>
-                <li class="topMenuOption"><a class="topMenuOptionText" href="filmsAndVideos.html">Films and Videos</a></li>
-
-                <!-- Theme selection box -->
-                <form action="javascript:changeTheme()" class="topMenuOption" style="padding: 16px;">
-                    <label class="topMenuOptionText" style="padding: 0px;">Theme</label>
-                    <select id="themeForm">
-                        <option value="Light">Light</option>
-                        <option value="Bubbles">Bubbles</option>
-                        <option value="Dark">Dark</option>
-                        <option value="Spooky">Spooky</option>
-                    </select>
-                    <input type="submit" value="Submit"/>
-                </form>
-            </menu>
-        </header>
-
-        <!-- Spooky Theme Light -->
-        <img id="CursorTorch" src="images/SpookyThemeLighting.png" alt="noAlt.png"/>
-        
-        <!-- Bubble Theme Bubbles -->
-        <img class="Bubbles" style="top: 22%; left: 10%;" src="images/Bubble.png" alt="noAlt.png"/>
-        <img class="Bubbles" style="top: 50%; left: 33%;" src="images/Bubble.png" alt="noAlt.png"/>
-        <img class="Bubbles" style="top: 45%; left: 67%;" src="images/Bubble.png" alt="noAlt.png"/>
-        <img class="Bubbles" style="top: 90%; left: 12%;" src="images/Bubble.png" alt="noAlt.png"/>
-        <img class="Bubbles" style="top: 20%; left: 70%;" src="images/Bubble.png" alt="noAlt.png"/>
-        <img class="Bubbles" style="top: 23%; left: 33%;" src="images/Bubble.png" alt="noAlt.png"/>
-        <img class="Bubbles" style="top: 45%; left: 97%;" src="images/Bubble.png" alt="noAlt.png"/>
-        <img class="Bubbles" style="top: 5%; left: 2%;" src="images/Bubble.png" alt="noAlt.png"/>
-        <img class="Bubbles" style="top: 33%; left: 22%;" src="images/Bubble.png" alt="noAlt.png"/>
-        <img class="Bubbles" style="top: 27%; left: 83%;" src="images/Bubble.png" alt="noAlt.png"/>
-
-
+        <!-- Executing the code behind loading the header, and updating theme assets. As ideally this is done as soon as possible in Loading. -->
+        <script>loadHeader();</script>
 
         <!--
         ==========================================================================================================
@@ -95,236 +62,62 @@
             </div>
         </section>
 
-        <!-- Opening Paragraph -->
         <div class="rowOfObjectsCentered">
-            <div style="flex: 0 0 600px; margin: 16px; text-align: center;">
-                Graphics Programming is one of my top hobbies. 
-                As it combines coding, art, and interactivity, which are like my top things.
+            <div style="flex: 0 0 300px; margin: 16px; text-align: center; ">
+                Graphics Programming is like painting with numbers. And I have tried to use it to painting some unique graphics.
             </div>
         </div>
 
-        <!-- Graphics Programming Example -->
+        <!-- Opening Paragraph -->
+        <div class="rowOfObjectsCentered">
+            <div style="flex: 0 0 500px; margin: 16px; text-align: left; ">
+                &emsp;&emsp;I found out about Graphics programming in the spring of 2024. And since then have tinkered with it whenever I get a idea I want to create.
+                As what Graphics Programming is the coding of shaders for the gpu, which gives it applications in visual generation and real time interaction.
+                <br>
+                <br>
+                What called me to it was the potential for the programming of truly new graphical effects.
+                As I know blender, and blender gives access to 1000s of potential shading, and modeling techniques.
+                But what blender can't give is something truly out there and unique.
+                <br>
+                <br>
+                &emsp;&emsp;I developed my fundamental understanding by following CatLikeCoding Graphics Programming tutorials for Unity.
+                But those were fundamentally tutorials.
+                <br>
+                So after completing a majority of the CatLikeCoding's projects, I started creating my own.
+            </div>
+            <div style="flex: 0 0 300px; margin: 16px; margin-left: 0px;">
+                    <img width="450px"" src="/images/graphicsPrograming/FireFlySceneEarlyProgress.jpg"/>
+            </div>
+        </div>
+
+
+        <!-- Individual Projects Pages -->
         <section>
             <div class="rowOfObjectsCentered">
-                <div style="flex: 0 0 500px; margin: 16px; text-align: left;">
-                    Here is a example of Graphics Programming. 
-                    It is a scene created with coding that it is possible to interact with. <br>
-                     - There is coding in coding up the procedural placement of the grass and fireflies. <br>
-                     - There is art is trying to make the scene look good. <br>
-                     - There is interactivity by the user being able to real time interact with the scene.
-                </div>
-                <div style="flex: 0 0 300px; margin: 16px; margin-left: 0px;">
-                    <img width="450px"" src="images/graphicsPrograming/FireFlySceneEarlyProgress.jpg"/>
-                </div>
+                <a href="/graphicsProgramming/customOrderedDithering.html">
+                    <div class="manySmallItemsGroup"">
+                        <div class="manySmallItemsText" style="font-size: 1.7em; font-weight: bold; text-align: center;">
+                            Custom Ordered Dithering
+                        </div>
+                        <div class="manySmallItemsImages">
+                            <img width="250px" src="/images/graphicsPrograming/ThumbnailOrderedDithering.jpg">
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/graphicsProgramming/shellTexturing.html">
+                    <div class="manySmallItemsGroup">
+                        <div class="manySmallItemsText" style="font-size: 1.7em; font-weight: bold; text-align: center;">
+                            Shell Texturing <br>
+                            <br>
+                        </div>
+                        <div class="manySmallItemsImages">
+                            <img width="250px" src="/images/graphicsPrograming/ShellShadingPageThumbnailCoralScene.jpg">
+                        </div>
+                    </div>
+                </a>
             </div>
         </section>
-
-        <!-- Zooming in Paragraph -->
-        <section>
-            <div class="rowOfObjectsCentered">
-                <div style="flex: 0 0 500px; margin: 16px; text-align: center;">
-                    So on this page I will share the projects I have completed using Graphics Programming.
-                    Alot of it will just be showing the cool results, but I will also try to explain some of the mathematics and programming behind it.
-                </div>
-            </div>
-        </section>
-
-        <!-- ========================================= Ordered Dithering ========================================= -->
-
-        <!-- Title -->
-        <section>
-            <div>
-                <div style="flex: 0 0 300px; margin: 16px; font-size: 2em; font-weight: bold; text-align: center;">
-                    Ordered Dithering <br>
-                </div>
-            </div>
-        </section>
-
-         <!-- Ordered Dithering Example -->
-         <section>
-            <div class="rowOfObjectsCentered">
-                <div style="flex: 0 0 500px; margin: 16px; text-align: left;">
-                    I went into the deepest of dives into Ordered Dithering.
-                    Like it really isn't a large subject so I literally covered everything there really is to know on it.
-                    On the Right you can see a example of ordered dithering on a basic sphere.
-                    On the surface level visually it makes it so instead of having a smooth transition of color, a pattern is planted within it.
-                    This creates a interesting stylization effect, as style is implanted into the very pixels. <br>
-                </div>
-                <div style="flex: 0 0 0%; margin: 16px; margin-left: 0px;">
-                    <img width="200px"" src="images/graphicsPrograming/OrderedDitheringSphereExampleDiamonds.PNG"/>
-                </div>
-            </div>
-        </section>
-
-        <!-- Ordered Dithering Explanation -->
-        <section>
-            <div class="rowOfObjectsCentered">
-                <div style="flex: 0 0 1px; margin: 16px; margin-right: 0px;">
-                    <img width="400px"" src="images/graphicsPrograming/OrderedDitheringDemonstration.png"/>
-                </div>
-                <div style="flex: 0 0 420px; margin: 16px; text-align: left;">
-                    In technical terms, this is a subset of dithering, as it is actually creating the appearance of more colors with less.
-                    The is done by mixing a texture, called a ordered dithering map, into the image which pushes the existing colors up or down. (Figure 1) <br>
-                    Then the colors of the image are quantized down to a lower number. (Figure 2) <br>
-                    And the ordered dithering map makes it so a appearance of the original colors are kept, as the original colors where pushed from their original values.
-                    This can also be thought of as the ordered dithering map controlling the order pixels transition to the next closest color. <br>
-                    <br>
-                    This example is quantized to a total of 4 colors.
-                </div>
-            </div>
-        </section>
-
-        <!-- Final Example -->
-        <section>
-            <div class="rowOfObjectsCentered">
-                <div style="flex: 0 0 100px; margin: 16px; text-align: left;">
-                    Many examples of Ordered Dithering.
-                </div>
-                <div style="flex: 0 0 1px; margin: 16px; margin-left: 0px;">
-                    <img width="700px"" src="images/graphicsPrograming/OrderedDitheringCustomMapsExamples.jpg"/>
-                </div>
-            </div>
-        </section>
-
-        <!-- ========================================= Shell Shading ========================================= -->
-
-        <!-- Title -->
-        <section>
-            <div>
-                <div style="flex: 0 0 300px; margin: 16px; font-size: 2em; font-weight: bold; text-align: center;">
-                    Shell Texturing <br>
-                </div>
-            </div>
-        </section>
-
-        <!-- Shell Shading Intro -->
-        <section>
-            <div class="rowOfObjectsCentered">
-                <div style="flex: 0 0 300px; margin: 16px; text-align: left;">
-                    Shell Shading is a graphics technique were multiple layers of geometry are used to add fake a surface having depth.
-                    Its simply having multiple layers of geometry with holes in them.
-                    This is a very basic technique when in comparison to things like parallax mapping, but it still has usages. <br>
-                    <br>
-                    I first touched on Shell Shading in blender were I messed around with layering geometry.
-                    But after tinkering with it for around a year in blender, I decided to go for a proper Implementation in Unity.
-                </div>
-                <div style="flex: 0 0 0%; margin: 16px; margin-left: 0px;">
-                    <img width="550px"" src="images/graphicsPrograming/ShellShadingDemonstrationBlender.jpg"/>
-                </div>
-            </div>
-        </section>
-
-        <!-- Shell Shading Programming Process -->
-        <section>
-            <div class="rowOfObjectsCentered">
-                <div style="flex: 0 0 0%; margin: 16px; margin-left: 0px;">
-                    <img width="300px"" src="images/graphicsPrograming/ShellShadingTransformationGlicth1.jpg"/>
-                </div>
-                <div style="flex: 0 0 0%; margin: 16px; margin-left: 0px;">
-                    <img width="300px"" src="images/graphicsPrograming/ShellShadingTransformationGlicth2.jpg"/>
-                </div>
-                <div style="flex: 0 0 300px; margin: 16px; text-align: left;">
-                    Making this in Unity was quite a challenge as it was the second time I had seriously diverged from tutorials.
-                    But I know this experience based learning is very powerful so I just went for it.
-                    It took alot of reading Unity's documentation to get GPU instancing working for efficiently rendering the many layers.
-                    Then it took alot of hassling to get transformations to properly apply to the layers.
-                    I especially had some trouble with the bounding box center for the Instancing call being used as the center of the world.
-                    Seen the the right are some glitches I ran into while trying to get the code to run.
-                </div>
-            </div>
-        </section>
-
-        <!-- Shell Shading Color Fading -->
-        <section>
-            <div class="rowOfObjectsCentered">
-                <div style="flex: 0 0 300px; margin: 16px; text-align: left;">
-                    Once I had a basic implementation I decided to add some bonus features.
-                    Color Fading:
-                    I added the ability to have lower levels of the Texture have fade into a color.
-                    The most common use of this is to fake ambient occlusion, where lower levels would have less light reaching them.
-                </div>
-                <div style="flex: 0 0 0%; margin: 16px; margin-left: 0px;">
-                    <img width="550px"" src="images/graphicsPrograming/ShellTexturingLayerFadingDemo.jpg"/>
-                </div>
-            </div>
-        </section>
-
-        <!-- Shell Shading Layer Attenuation -->
-        <section>
-            <div class="rowOfObjectsCentered">
-                <div style="flex: 0 0 0%; margin: 16px; margin-left: 0px;">
-                    <img width="500px"" src="images/graphicsPrograming/ShellTexturingLayerAttenuation.jpg"/>
-                </div>
-                <div style="flex: 0 0 300px; margin: 16px; text-align: left;">
-                    Layer Attenuation:
-                    I also added layer attenuation, where the layers near the bottom have more distance between them,
-                    and the layers at the top have less distance between them.
-                    This helps improve the appearance of the layers, as the layers at the bottom have less transparency,
-                    meaning generally less layers are necessary there to create a convincing illusion of volume.
-                    Then layers at the top are much thinner, meaning the illusion of volume is usually worse,
-                    so it benefits from less space between the layers.
-                </div>
-            </div>
-        </section>
-
-        <!-- Shell Shading Optimization -->
-        <section>
-            <div class="rowOfObjectsCentered">
-                <div style="flex: 0 0 450px; margin: 16px; text-align: left;">
-                    There is a concept in computer graphics of overdraw.
-                    I don't know all the precise details, but I know when geometry to layered up
-                    a pixel can end up being written too multiple times when the GPU is figuring which layer of geometry is closest to the camera.
-                    And that writing to multiple times is slow, so its best to have the geometry closest to the camera be tested first.
-                    <br>
-                    <br>
-                    And I though this optimization could be applied to this shader, as it draws layers of geometry all on top of each other.
-                    So I did a test and found it runs significantly faster the layers are drawn closest to farthest.
-                    The Average Frame Rate being 200 higher with the reversed render order.
-                    I wasn't sure if the optimization would apply here but it absolutely dose.
-                </div>
-                <div style="flex: 0 0 0%; margin: 16px; margin-left: 0px;">
-                    <img width="550px"" src="images/graphicsPrograming/ShellTexturingOrderOptimization.jpg"/>
-                </div>
-            </div>
-        </section>
-
-        <!-- Shell Shading Journal -->
-        <section>
-            <div class="rowOfObjectsCentered">
-                <div style="flex: 0 0 200px; margin: 16px; text-align: left; margin-right: 1px;">
-                    Heres a couple pages of my notes from when solving the problems that came up in this process.
-                </div>
-                <div style="flex: 0 0 0%; margin: 16px; margin-left: 0px;">
-                    <img width="250px"" src="images/graphicsPrograming/ShellTexturingJournalLayerAttenuation.jpg"/>
-                </div>
-                <div style="flex: 0 0 0%; margin: 16px; margin-left: 0px;">
-                    <img width="250px"" src="images/graphicsPrograming/ShellTexturingJournalLayerColorFading.jpg"/>
-                </div>
-            </div>
-        </section>
-
-        <!-- Shell Shading Optimization -->
-        <section>
-            <div class="rowOfObjectsCentered">
-                <div style="flex: 0 0 300px; margin: 16px; text-align: left;">
-                    This implementation isn't perfect, it's lighting model is still lacking.
-                    Theres alot of optimizations that could be applied to the math in the shader,
-                    Like every layer still involves the construction of a full rotation matrix.
-                    But it is good enough for me.
-                    So here is a series of renders I made using the it.
-                </div>
-                <div style="flex: 0 0 0%; margin: 16px; margin-left: 0px;">
-                    <img width="650px"" src="images/graphicsPrograming/ShellTexturingCityRender.jpg"/>
-                </div>
-                <div style="flex: 0 0 0%; margin: 16px; margin-left: 0px;">
-                    <img width="300px"" src="images/graphicsPrograming/ShellTexturingDemoTubeRender.jpg"/>
-                </div>
-                <div style="flex: 0 0 0%; margin: 16px; margin-left: 0px;">
-                    <img width="400px"" src="images/graphicsPrograming/ShellTexturingDemoBrickSphere.jpg"/>
-                </div>
-            </div>
-        </section>
-
 
     </body>
 </html>
