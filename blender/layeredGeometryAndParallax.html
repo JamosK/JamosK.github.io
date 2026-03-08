@@ -62,6 +62,215 @@
             </div>
         </section>
 
+        <!-- Intro -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 400px; margin: 16px; text-align: left;">
+                    Rendering fur or other complex bumpy surfaces is challenging.
+                    As the material involves depth, meaning it can't be approximated by a flat surface.
+                    But it is possible. For example Red Dead Redemption 2 does an exceptional job rendering fur, and while playing it I got inspired.
+                    So I went down a rabbit hole trying to implement my own fur-like shading.
+                </div>
+                <div class="manySmallItemsImages">
+                    <img width="500px" src="/images/blender/layeredGeometryAndParallax/realFurExampleSheep.jpg">
+                </div>
+            </div>
+        </section>
+
+        <hr class="lineMinor">
+
+        <!-- Shell Shading Section -->
+        <section>
+            <div>
+                <div style="flex: 0 0 300px; margin: 12px; margin-top: 25px; font-size: 2em; font-weight: bold; text-align: center;">
+                    Shell Shading <br>
+                </div>
+            </div>
+        </section>
+
+        <!-- Explanation -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 400px; margin: 16px; text-align: left;">
+                    One way to render depth, is to literally stack multiple surfaces.
+                    This technique is called shell shading (not to be mixed up with cell shading), and it has been used for decades.
+                    So I decided to use Blenders geometry nodes to put together a basic implementation.
+                </div>
+                <div class="manySmallItemsImages">
+                    <img width="500px" src="/images/blender/layeredGeometryAndParallax/shellShadingDemonstration.jpg">
+                </div>
+                <div class="manySmallItemsImages">
+                    <img width="200px" src="/images/blender/layeredGeometryAndParallax/shellShadingNodeTree.jpg">
+                </div>
+            </div>
+        </section>
+
+        <!-- Artworks -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div class="manySmallItemsImages">
+                    <img width="350px" src="/images/blender/layeredGeometryAndParallax/shellShadingFluffyChair.jpg">
+                </div>
+                <div class="manySmallItemsImages">
+                    <img width="350px" src="/images/blender/layeredGeometryAndParallax/shellShadingFluffyHatV2.jpg">
+                </div>
+                <div class="manySmallItemsImages">
+                    <img width="350px" src="/images/blender/layeredGeometryAndParallax/shellShadingFurReplicationProgress4.jpg">
+                </div>
+                <div class="manySmallItemsImages">
+                    <img width="350px" src="/images/blender/layeredGeometryAndParallax/shellShadingFakeVolumetricsTest.jpg">
+                </div>
+            </div>
+        </section>
+
+        <!-- The limits of this technique -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 400px; margin: 16px; text-align: left;">
+                    Shell shading works quite well for rendering fur-like surfaces.
+                    I even went on to program a shader in Unity which creates this same effect more efficiently.
+                    <br>
+                    <br>
+                    But it does have drawbacks, such as it is considerably more GPU intensive then a flat surface.
+                    It's a illusion also fails when viewed at harsh angles.
+                    So I did some more research to find other ways to render a fur-like material...
+                </div>
+            </div>
+        </section>
+
+
+        <hr class="lineMinor">
+
+        <!-- Shell Shading Section -->
+        <section>
+            <div>
+                <div style="flex: 0 0 300px; margin: 12px; margin-top: 25px; font-size: 2em; font-weight: bold; text-align: center;">
+                    Parallax Mapping <br>
+                </div>
+            </div>
+        </section>
+
+        <!-- Parallax mapping Ideal -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 400px; margin: 16px; text-align: left;">
+                    Parallax mapping creates depth by shifting where the textures are sampled.
+                    It uses the incoming camera ray to calculate the parallax causes by the viewing angle.
+                    <br>
+                    <br>
+                    This means instead of rendering a material across multiple triangles to create depth,
+                    it renders one triangle and calculates how depth would effect its appearance.
+                </div>
+                <div class="manySmallItemsImages">
+                    <img width="600px" src="/images/blender/layeredGeometryAndParallax/parallaxMappingDemonstration.jpg">
+                </div>
+            </div>
+        </section>
+
+        <br>
+        <br>
+
+        <!-- Version 1 -->
+        <section>
+            <div>
+                <div style="flex: 0 0 300px; margin: 12px; margin-top: 25px; font-size: 1.3em; font-weight: bold; text-align: center;">
+                    Version 1 <br>
+                </div>
+            </div>
+        </section>
+
+        <!-- Parallax mapping ideal -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 300px; margin: 16px; text-align: left;">
+                    When I first tried to create parallax mapping, I had no idea what I was doing.
+                    Instead of using texture sampling shifting, I created shell shading inside of a shader.
+                    Which was very inefficient, and resulted in the worst node tree I have ever created
+                </div>
+                <div class="manySmallItemsImages">
+                    <img width="300px" src="/images/blender/layeredGeometryAndParallax/orginalParallaxMappingBlender.jpg">
+                </div>
+                <div class="manySmallItemsImages">
+                    <img width="500px" src="/images/blender/layeredGeometryAndParallax/originalParallaxNodeTree.jpg">
+                </div>
+            </div>
+        </section>
+
+        <br>
+        <br>
+
+        <!-- Version 2 -->
+        <section>
+            <div>
+                <div style="flex: 0 0 300px; margin: 12px; margin-top: 25px; font-size: 1.3em; font-weight: bold; text-align: center;">
+                    Version 2 <br>
+                </div>
+            </div>
+        </section>
+
+        <!-- Parallax mapping improper implementation-->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 300px; margin: 16px; text-align: left;">
+                    Before learning how to create the proper mathematics behind parallax mapping, I did improve this shell shading in shader.
+                    I simplified the node tree by creating a sudo for loop using a series of node groups which pass values down.
+                    This shell shading in shader technique does have it's own graphical merits, but not particular in the direction of rendering fur-like materials.
+                </div>
+                <div class="manySmallItemsImages">
+                    <img width="400px" src="/images/blender/layeredGeometryAndParallax/parallaxShaderNodeTree.jpg">
+                </div>
+            </div>
+        </section>
+
+        <!-- Parallax mapping improving my implementation -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div class="manySmallItemsImages">
+                    <img width="800px" src="/images/blender/layeredGeometryAndParallax/blenderParallaxMappingLavaFloor.jpg">
+                </div>
+            </div>
+        </section>
+
+        <br>
+        <br>
+
+        <!-- Version 3 -->
+        <section>
+            <div>
+                <div style="flex: 0 0 300px; margin: 12px; margin-top: 25px; font-size: 1.3em; font-weight: bold; text-align: center;">
+                    Version 3 <br>
+                </div>
+            </div>
+        </section>
+
+        <!-- Parallax mapping proper implementation-->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div class="manySmallItemsImages">
+                    <img width="500px" src="/images/blender/layeredGeometryAndParallax/parallaxlBlenderNodeTreeProperMathematics.jpg">
+                </div>
+                <div style="flex: 0 0 300px; margin: 16px; text-align: left;">
+                    After following a tutorial on parallax mapping, I did learn the proper mathematics behind it.
+                    <br>
+                    <br>
+                    They are the most simple possible mathematics behind parallax mapping, meaning there are heavy limitations.
+                    <br>
+                    <br>
+                    CatlikeCoding has a great tutorial on parallax mapping which explains methods using raymarching to get more accurate results. 
+                    <a href="https://catlikecoding.com/unity/tutorials/rendering/part-20/">link</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final Demo Image -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div class="manySmallItemsImages">
+                    <img width="800px" src="/images/blender/layeredGeometryAndParallax/parallaxMappingComparisons.jpg">
+                </div>
+            </div>
+        </section>
+
     </body>
 </html>
 

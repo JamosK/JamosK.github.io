@@ -62,6 +62,176 @@
             </div>
         </section>
 
+        <!-- Intro -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 300px; margin: 16px; text-align: left;">
+                    Early when learning how to 3D model, I got a obsession with trees.
+                    As unlike the engineered objects I was modeling, trees were incredibly organic and complicated.
+                    And I had seen fairly realistic trees in videos games. 
+                    <br>
+                    So I was stuck thinking how?
+                    As every method I could imagine would require mass amounts of work manually placing curves
+                </div>
+                <div style="flex: 0 50px 400px; margin: 16px;">
+                    <img width="600px"" src="/images/blender/modelingTrees/realTreeExample.jpg"/>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sapling Tree Gen -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 50px 400px; margin: 16px;">
+                    <img width="400px"" src="/images/blender/modelingTrees/saplingTreeGenPlugin.jpg"/>
+                </div>
+                <div style="flex: 0 0 300px; margin: 16px; text-align: left;">
+                    It turns out there is a very reasonable way how.
+                    Tree generation programs have been developed for this exact use.
+                    And blender has a plugin Sapling Tree Gen would is the exact tool for this task.
+                </div>
+            </div>
+        </section>
+
+        <!-- First Attempt -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 300px; margin: 16px; text-align: center;">
+                    So I got to work, and modeled my first tree.
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </section>
+
+        <hr class="lineMinor">
+
+        <!-- First Attempt -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 50px 400px; margin: 16px;">
+                    <img width="600px"" src="/images/blender/modelingTrees/1Oak_Tree_Image.jpg"/>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 300px; margin: 16px; text-align: center;">
+                    If you take a close took at that tree, it is'nt very tree like.
+                    It looks too much like plastic, the roots don't look right, and there are simply too few leaves.
+                    <br>
+                    <br>
+                    After evaluating I identified some issues.
+                    I completely messing up the trees UV mapping.
+                    As the UV map shown on the right is a absolute mess. Being a simple one direction projection which is not sufficient for a cylinder.
+                    <br>
+                    <br>
+                    I also should have used a leaf texture with multiple leaves.
+                    As to increase the density of leaves I should have used a texture which is essentially a mini branch.
+                    <br>
+                    <br>
+                    And lastly the leaves where too random.
+                    As in real trees have a level of logic behind where leaves are place,
+                    and I need to somewhat replicate that logic using mathematics.
+                </div>
+                <div style="flex: 0 50px 400px; margin: 16px;">
+                    <img width="80px"" src="/images/blender/modelingTrees/1Leaf_Texture.jpg"/>
+                </div>
+                <div style="flex: 0 50px 400px; margin: 16px;">
+                    <img width="200px"" src="/images/blender/modelingTrees/2oak_leaves_diff_6.jpg"/>
+                </div>
+                <div style="flex: 0 50px 400px; margin: 16px;">
+                    <img width="200px"" src="/images/blender/modelingTrees/1oak_tree_diff.jpg"/>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Second Attempt -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 300px; margin: 16px; text-align: center;">
+                    So I went and modeled my second tree.
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </section>
+
+        <hr class="lineMinor">
+
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 50px 400px; margin: 16px;">
+                    <img width="600px"" src="/images/blender/modelingTrees/2Oak_Tree_Image2.jpg"/>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 300px; margin: 16px; text-align: left;">
+                    This new tree still does'nt quite have the appearance of a tree.
+                    But I did fix many of the issues. I used a branch texture for the leaves, I fixing the UV mapping issues.
+                    <br>
+                    <br>
+                    And I used geometry nodes for the leaves placement.
+                     So I could have more fine detail control over what angle every branch was placed at.
+                     Using that control I created a node tree which tries to replicate how trees angle their branches.
+                </div>
+                <div style="flex: 0 50px 400px; margin: 16px;">
+                    <img width="600px"" src="/images/blender/modelingTrees/2TreeLeavesAngleGeometryNodes.jpg"/>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 300px; margin: 16px; text-align: left;">
+                    but issues persist. Such as despite my geometry nodes the leaves placement still does'nt look right.
+                     Specifically there are too many trees in the inners of the tree where light does'nt reach.
+                     Such as when looking at the shadow of the tree, it is a solid shadow.
+                     But the reference tree at the top of the page has many holes in the canopy.
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Second Attempt -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 300px; margin: 16px; text-align: center;">
+                    Wanting to improve on leaf placement, I want and modeled it again.
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </section>
+
+        <hr class="lineMinor">
+
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 50px 400px; margin: 16px;">
+                    <img width="800px"" src="/images/blender/modelingTrees/3FinalTreeV2.jpg"/>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 500px; margin: 16px; text-align: left;">
+                    This is the best tree yet but it still has errors.
+                    The branches you can now see, are far too sharp and straight for a real tree.
+                    <br>
+                    <br>
+                    But biggest of all the leaf placement still is'nt quite right.
+                    As in many areas it is just far too dense for a real tree, and in other areas it is too sparse.
+                    So going forward I would probably need a completely distinct method of placing leaves, which models how real trees choose to grow leaves.
+                </div>
+            </div>
+        </section>
+
     </body>
 </html>
 

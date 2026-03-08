@@ -1,6 +1,6 @@
 <!-- html setup -->
 <!DOCTYPE html>
-<!-- Setting up a Listener to move the torch as every mouse movement -->
+<!-- Setting up a Listener to move the torch on every mouse movement -->
 <html lang="en" onmousemove="mainTorchMovement(event)">
 
 
@@ -11,7 +11,7 @@
     <!-- The <head> tag is used for the setup of meta data, and pauses for loading separate files -->
     <head>
         <!-- Setting the Title and Icon -->
-        <title>J.Kom About</title>
+        <title>J.Kom Videos</title>
         <link rel="icon" type="image/x-icon" href="/images/favicon.png">
 
         <!-- Setting information on how a page should be displayed based on the device -->
@@ -37,7 +37,6 @@
     <!-- ============================================================================================== -->
     <body onload="setupWebsite();">
 
-
         <!-- Loading the header and setups, the html is fetched from a separate file with javascript. -->
         <!-- The <a> element is used to avoid the creation of a scrolling container, so scrolling context remains within <body> -->
         <!-- There may be a more appropriate non block level for holding these elements. -->
@@ -58,72 +57,24 @@
         <section>
             <div>
                 <div style="flex: 0 0 300px; margin: 12px; margin-top: 25px; font-size: 2.8em; font-weight: bold; text-align: center;">
-                    About this Website <br>
+                    Gaming Challenges <br>
                 </div>
             </div>
         </section>
 
-        <!-- Quick Intro -->
+        <!-- Intro -->
         <section>
             <div class="rowOfObjectsCentered">
                 <div style="flex: 0 0 400px; margin: 16px; text-align: center;">
-                    This website is simply a documentation of every notable project I have completed.
-                    Ranging from films, to programming challenges.
+                    I have been creating videos for a very long time. Either for fun on my own, with friends, or in schools.
+                    I almost even majored in film, but have decided to keep it a hobby.
+                </div>
+                <div class="manySmallItemsImages">
+                    <img width="250px" src="/images/filmsAndVideo/iconFilms.jpg">
                 </div>
             </div>
         </section>
-
-        <!-- Invitation -->
-        <section>
-            <div class="rowOfObjectsCentered">
-                <div style="flex: 0 0 400px; margin: 16px; text-align: center;">
-                    So go explore.
-                </div>
-            </div>
-        </section>
-
-
-        <section>
-            <div class="rowOfObjectsCentered">
-                <a href="/graphicsPrograming.html">
-                    <div class="manySmallItemsGroup"">
-                        <div class="manySmallItemsText" style="font-size: 1.7em; font-weight: bold; text-align: center;">
-                            Graphics Programming
-                        </div>
-                        <div class="manySmallItemsImages">
-                            <img width="250px" src="/images/graphicsPrograming/ShellShadingPageThumbnailCoralScene.jpg">
-                        </div>
-                    </div>
-                </a>
-
-                <a href="/blender.html">
-                    <div class="manySmallItemsGroup">
-                        <div class="manySmallItemsText" style="font-size: 1.7em; font-weight: bold; text-align: center;">
-                            Blender
-                            <br>
-                            <br>
-                        </div>
-                        <div class="manySmallItemsImages">
-                            <img width="250px" src="/images/blender/iconLowPolyModeling.jpg">
-                        </div>
-                    </div>
-                </a>
-
-                <a href="/filmsAndVideos.html">
-                    <div class="manySmallItemsGroup">
-                        <div class="manySmallItemsText" style="font-size: 1.7em; font-weight: bold; text-align: center;">
-                            Films and Video
-                            <br>
-                            <br>
-                        </div>
-                        <div class="manySmallItemsImages">
-                            <img width="250px" src="/images/filmsAndVideo/iconFilms.jpg">
-                        </div>
-                    </div>
-                </a>
-
-            </div>
-        </section>
+      
 
     </body>
 </html>

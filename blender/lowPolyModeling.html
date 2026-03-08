@@ -65,30 +65,97 @@
         <!-- Opening Paragraph -->
         <div class="rowOfObjectsCentered">
             <div style="flex: 0 0 600px; margin: 12px; text-align: center;">
-                In 2023 I went on a journey trying to make the most optimized efficient models possible.
-                Models with low triangle counts, and simple single color shading.
+                Video game optimization is something which is easy to complain about.
+                And back in 2023 I had a ancient laptop, so everything ran slow.
+                This got me thinking, how could I create the most optimized rendering possible?
+            </div>
+        </div>
+        
+        <hr class="lineMinor">
+
+
+        <!-- Low Poly Section -->
+        <section>
+            <div>
+                <div style="flex: 0 0 300px; margin: 12px; margin-top: 25px; font-size: 2em; font-weight: bold; text-align: center;">
+                    Low Poly <br>
+                </div>
+            </div>
+        </section>
+
+        <!-- So how is this optimized -->
+        <div class="rowOfObjectsCentered">
+            <div style="flex: 0 0 600px; margin: 12px; text-align: center;">
+                So I got into low poly modeling. Which is modeling objects with the lowest number of triangles possible.
+                And looking back this really is'nt the route to make video games render more quickly.
+                As after doing some studying of graphics programming, there is a ton more going on behind the scenes.
+                And much of the time the method for dealing with poly counts is having multiple LODs instead of one low poly mesh.
+            </div>
+            <div class="manySmallItemsImages">
+                <img width="250px" src="/images/blender/lowPolyModeling/BarrelPreviewImage.jpg">
             </div>
         </div>
 
+        <!-- Mass Production -->
+        <div class="rowOfObjectsCentered">
+            <div class="manySmallItemsImages">
+                <img width="700px" src="/images/blender/lowPolyModeling/KitchenAssetsPreviewImage.jpg">
+            </div>
+            <div style="flex: 0 0 300px; margin: 12px; text-align: center;">
+                Even if low poly modeling did'nt allow me to create the most efficient models, it did allow me to create a lot of them.
+                As skipping most of the refining I was able to mass produce these models.
+            </div>
+        </div>
+        
+        <div class="rowOfObjectsCentered">
+            <div class="manySmallItemsImages">
+                <img width="500px" src="/images/blender/iconLowPolyModeling.jpg">
+            </div>
+            <div class="manySmallItemsImages">
+                <img width="700px" src="/images/blender/lowPolyModeling/RocksRender.jpg">
+            </div>
+            <div class="manySmallItemsImages">
+                <img width="300px" src="/images/blender/lowPolyModeling/BasketPreviewImage.jpg">
+            </div>
+            <div class="manySmallItemsImages">
+                <img width="600px" src="/images/blender/lowPolyModeling/Cabin_Interior1.jpg">
+            </div>
+        </div>
 
         
-        
+
+
         <hr class="lineMinor">
+        
+        <!-- Low Poly Section -->
+        <section>
+            <div>
+                <div style="flex: 0 0 300px; margin: 12px; margin-top: 25px; font-size: 2em; font-weight: bold; text-align: center;">
+                    Baking Lighting <br>
+                </div>
+            </div>
+        </section>
+
         <!-- Baked Lighting Example -->
         <section>
             <div class="rowOfObjectsCentered">
                 <div style="flex: 0 0 400px; margin: 16px; text-align: left;">
-                    2023/9/22 "Baked Lighting Experiments" <br>
-                    This is from one time I tried out rendering with baked lighting.
-                    The idea of baked lighting is instead of doing real time ray traced mathematics to find what a scene looks like,
-                    you do that math and save the result in textures. And then just re-render the scene using those textures.
+                    <!--2023/9/22 "Baked Lighting Experiments" <br>-->
+                    So what are some other ways to create super optimized rendering?
+                    Well I tried precalculating a scenes lighting.
+                    <br>
+                    <br>
+                    Baked lighting is a system where instead of calculating lighting real time,
+                    you do the math and save the result in a texture. Then those textures can be used to efficient re-render the scene.
+                    <br>
+                    <br>
                     The result I got was ok, you can see some issues at the borders of objects.
                     And it appears I didn't use a Denoiser, maybe this is because I thought it looked cool.
-                    I also really faced the reality of the massive texture size necessary for this rendering to look good.
-                    I also learned your lighting has to be very diffuse for the result to look passable.
+                    But if I want to improve this result in the future I would combine the baked lighting with real time lighting as well.
+                    Because baked lighting can't do reflections or update real time, so mixing other techniques in is necessary.
                 </div>
-                <div style="flex: 0 50px 300px; margin: 16px;">
-                    <img width="500px"" src="/images/blender/smallProjects/BakedLightingSceneExample.jpg"/>
+                <div style="flex: 0 50px 400px; margin: 16px;">
+                    <img width="600px"" src="/images/blender/smallProjects/BakedLightingSceneExample.jpg"/>
                 </div>
             </div>
         </section>

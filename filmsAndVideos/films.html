@@ -1,0 +1,139 @@
+<!-- html setup -->
+<!DOCTYPE html>
+<!-- Setting up a Listener to move the torch on every mouse movement -->
+<html lang="en" onmousemove="mainTorchMovement(event)">
+
+
+
+    <!-- ============================================================================================== -->
+    <!-- =========================================== Header =========================================== -->
+    <!-- ============================================================================================== -->
+    <!-- The <head> tag is used for the setup of meta data, and pauses for loading separate files -->
+    <head>
+        <!-- Setting the Title and Icon -->
+        <title>J.Kom Videos</title>
+        <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+
+        <!-- Setting information on how a page should be displayed based on the device -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- ============================================= CSS ============================================= -->
+        <!-- Importing the main CSS file -->
+        <link rel="stylesheet" href="/mainCSS.css">
+
+        <!-- ============================================= Scripts ============================================= -->
+        <script src="/mainJS.js"></script> 
+
+        <!-- Updating the Theme's colors before any rendering Begins -->
+        <script>
+            updateTheme();
+        </script>
+    </head>
+
+
+
+    <!-- ============================================================================================== -->
+    <!-- ========================================== HTMLBody ========================================== -->
+    <!-- ============================================================================================== -->
+    <body onload="setupWebsite();">
+
+        <!-- Loading the header and setups, the html is fetched from a separate file with javascript. -->
+        <!-- The <a> element is used to avoid the creation of a scrolling container, so scrolling context remains within <body> -->
+        <!-- There may be a more appropriate non block level for holding these elements. -->
+        <a id="headerAndSetup"></a>
+
+        <!-- Executing the code behind loading the header, and updating theme assets. As ideally this is done as soon as possible in Loading. -->
+        <script>loadHeader();</script>
+
+        <!--
+        ==========================================================================================================
+        ==========================================================================================================
+        =================================== Beginning of Pages Unique Content ====================================
+        ==========================================================================================================
+        ==========================================================================================================
+        -->
+
+        <!-- Title -->
+        <section>
+            <div>
+                <div style="flex: 0 0 300px; margin: 12px; margin-top: 25px; font-size: 2.8em; font-weight: bold; text-align: center;">
+                    Films <br>
+                </div>
+            </div>
+        </section>
+
+        <!-- Intro, what Freestyle is -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 400px; margin: 16px; text-align: left;">
+                    I first got into film proper during highschool, when I entered a art program called Freestyle Academy.
+                    Before I had made many small videos and memes on my won, but this program taught me how to create comprehensive projects.
+                    The biggest thing this program did was give us 12 hours of class time each week to work on film.
+                    Which for school is a absurd amount of time to spend in a singular class.
+                    <br>
+                    <br>
+                    But with a absurd amount of time, you can learn a absurd amount.
+                </div>
+                <div class="manySmallItemsImages">
+                    <img width="250px" src="/images/filmsAndVideo/iconFilms.jpg">
+                </div>
+            </div>
+        </section>
+
+        <!-- Intro -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 400px; margin: 16px; text-align: left;">
+                    The class covered just about everything about film, screen writing, directing, cinematography, production design, location scouting,
+                    audio design, color grading, and the list goes on.
+                    <br>
+                    All of those skills combined in the senior narrative project, which require writing and filming a film.
+                </div>
+            </div>
+        </section>
+
+        <!-- Senior Narrative -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div class="manySmallItemsImages">
+                    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/5741DBYXa3o?si=BcDBtfZ4_rMNsaSQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <br>
+        <br>
+        <br>
+
+        <!-- Intro -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 400px; margin: 16px; text-align: left;">
+                    Another notable assignment was documentary, as it taught a completely set of skills for documenting a story rather then telling one.
+                    I really enjoyed this process of documenting a story, and then sorting through the best most honest way to tell it.
+                </div>
+            </div>
+        </section>
+
+        <!-- Junior Documentary -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div class="manySmallItemsImages">
+                    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/UM5Ju-7fsdw?si=8tfo63d7xaDTxtR-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Reference to the Freestyle Website -->
+        <section>
+            <div class="rowOfObjectsCentered">
+                <div style="flex: 0 0 400px; margin: 16px; text-align: left;">
+                    Those two projects are the best ones I made at Freestyle.
+                    But if you want a more comprehensive history, here is a link to my page on the Freestyle website:
+                    <a href="https://freestyleacademy.rocks/~JamesK/about-me/">link</a>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
